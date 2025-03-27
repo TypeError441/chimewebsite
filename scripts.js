@@ -1,4 +1,7 @@
+// Variables
+
 const version = "v1.2";
+
 var schedules = {
     Normal: [
         [8, 25, "Free"], [8, 30, "Passing to Period 1"], [9, 16, "Period 1"],
@@ -9,33 +12,39 @@ var schedules = {
         [14, 17, "Passing to Period 7"], [15, 3, "Period 7"]
     ],
     Tutorial: [
-        [8, 25, "Free"], [8, 30, "Passing to Period 1"], [9, 12, "Period 1"], [9, 15, "Passing to Period 2"],
-        [9, 57, "Period 2"], [10, 0, "Passing to Period 3"], [10, 42, "Period 3"], [10, 56, "Brunch"],
-        [10, 59, "Passing to Tutorial"], [11, 27, "Tutorial"], [11, 30, "Passing to Period 4"], [12, 12, "Period 4"],
-        [12, 15, "Passing to Period 5"], [12, 57, "Period 5"], [13, 33, "Lunch"], [13, 36, "Passing to Period 6"], 
-        [14, 18, "Period 6"], [14, 21, "Passing to Period 7"], [15, 3, "Period 7"]
+        [8, 25, "Free"], [8, 30, "Passing to Period 1"], [9, 12, "Period 1"], 
+        [9, 15, "Passing to Period 2"], [9, 57, "Period 2"], [10, 0, "Passing to Period 3"], 
+        [10, 42, "Period 3"], [10, 56, "Brunch"], [10, 59, "Passing to Tutorial"], 
+        [11, 27, "Tutorial"], [11, 30, "Passing to Period 4"], [12, 12, "Period 4"], 
+        [12, 15, "Passing to Period 5"], [12, 57, "Period 5"], [13, 33, "Lunch"], 
+        [13, 36, "Passing to Period 6"], [14, 18, "Period 6"], [14, 21, "Passing to Period 7"], 
+        [15, 3, "Period 7"]
     ],
     Even: [
-        [9, 12, "Free"], [9, 17, "Passing to Period 2"], [10, 39, "Period 2"], [10, 53, "Brunch"],
-        [10, 56, "Passing to Period 4"], [12, 18, "Period 4"], [12, 54, "Lunch"], [12, 57, "Passing to Period 6"],
-        [14, 19, "Period 6"], [14, 22, "Passing to Tutorial"], [15, 3, "Tutorial"]
+        [9, 12, "Free"], [9, 17, "Passing to Period 2"], [10, 39, "Period 2"], 
+        [10, 53, "Brunch"], [10, 56, "Passing to Period 4"], [12, 18, "Period 4"], 
+        [12, 54, "Lunch"], [12, 57, "Passing to Period 6"], [14, 19, "Period 6"], 
+        [14, 22, "Passing to Tutorial"], [15, 3, "Tutorial"]
     ],
     Odd: [
-        [8, 25, "Free"], [8, 30, "Passing to Period 1"], [9, 52, "Period 1"], [9, 58, "Break"],
-        [10, 1, "Passing to Period 3"], [11, 23, "Period 3"], [11, 37, "Brunch"], [11, 40, "Passing to Period 5"],
-        [13, 2, "Period 5"], [13, 38, "Lunch"], [13, 41, "Passing to Period 7"], [15, 3, "Period 7"]
+        [8, 25, "Free"], [8, 30, "Passing to Period 1"], [9, 52, "Period 1"], 
+        [9, 58, "Break"], [10, 1, "Passing to Period 3"], [11, 23, "Period 3"], 
+        [11, 37, "Brunch"], [11, 40, "Passing to Period 5"], [13, 2, "Period 5"], 
+        [13, 38, "Lunch"], [13, 41, "Passing to Period 7"], [15, 3, "Period 7"]
     ],
     Advisory: [
-        [8, 25, "Free"], [8, 30, "Passing to Period 1"], [9, 12, "Period 1"], [9, 15, "Passing to Period 2"],
-        [9, 57, "Period 2"], [10, 0, "Passing to Period 3"], [10, 42, "Brunch"], [10, 56, "Passing to Advisory"],
-        [10, 59, "Advisory"], [11, 27, "Passing to Period 4"], [12, 12, "Period 4"], [12, 15, "Passing to Period 5"],
-        [12, 57, "Period 5"], [13, 33, "Lunch"], [13, 36, "Passing to Period 6"], [14, 18, "Period 6"], 
-        [14, 21, "Passing to Period 7"], [15, 3, "Period 7"]
+        [8, 25, "Free"], [8, 30, "Passing to Period 1"], [9, 12, "Period 1"], 
+        [9, 15, "Passing to Period 2"], [9, 57, "Period 2"], [10, 0, "Passing to Period 3"], 
+        [10, 42, "Brunch"], [10, 56, "Passing to Advisory"], [10, 59, "Advisory"], 
+        [11, 27, "Passing to Period 4"], [12, 12, "Period 4"], [12, 15, "Passing to Period 5"], 
+        [12, 57, "Period 5"], [13, 33, "Lunch"], [13, 36, "Passing to Period 6"], 
+        [14, 18, "Period 6"], [14, 21, "Passing to Period 7"], [15, 3, "Period 7"]
     ],
     Minimum: [
-        [8, 25, "Free"], [8, 30, "Passing to Period 1"], [9, 0, "Period 1"], [9, 3, "Passing to Period 2"],
-        [9, 33, "Period 2"], [9, 36, "Passing to Period 3"], [10, 6, "Passing to Period 4"], [10, 9, "Period 4"],
-        [10, 39, "Brunch"], [10, 51, "Passing to Period 5"], [11, 24, "Period 5"], [11, 27, "Passing to Period 6"],
+        [8, 25, "Free"], [8, 30, "Passing to Period 1"], [9, 0, "Period 1"], 
+        [9, 3, "Passing to Period 2"], [9, 33, "Period 2"], [9, 36, "Passing to Period 3"], 
+        [10, 6, "Passing to Period 4"], [10, 9, "Period 4"], [10, 39, "Brunch"], 
+        [10, 51, "Passing to Period 5"], [11, 24, "Period 5"], [11, 27, "Passing to Period 6"], 
         [11, 57, "Period 6"], [12, 0, "Passing to Period 7"], [12, 30, "Period 7"]
     ],
     Assembly: [
@@ -48,16 +57,18 @@ var schedules = {
     Weekend: []
 };
 
-var dayIndex = new Date().getDay();
 var scheduleKeys = ["Weekend", "Normal", "Tutorial", "Even", "Odd", "Advisory", "Weekend", "Minimum", "Assembly"];
+var dayIndex = new Date().getDay();
 var currentSchedule = schedules[scheduleKeys[dayIndex]];
 
+// Functions
+
 function switchSchedule() {
-    // Increment the dayIndex and reset it if it's out of bounds
     dayIndex = (dayIndex + 1) % scheduleKeys.length;
     currentSchedule = schedules[scheduleKeys[dayIndex]];
     updateSchedule();
 }
+
 function updateSchedule() {
     let now = new Date();
     let foundNextPeriod = false;
@@ -99,25 +110,23 @@ function update() {
     setTimeout(update, 1000);
 }
 
+// Start
+
 $(document).ready(function () {
-    // Load version
     $(".version").text(version);
-    
-    // Font
+
     var selectedFont = localStorage.getItem("font");
-    if(selectedFont) {
+    if (selectedFont) {
         $('*').css('font-family', selectedFont);
         $('select.font').val(selectedFont);
     }
 
-    // Theme
     var savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
         $('html').attr('data-theme', savedTheme);
         $('.theme').val(savedTheme);
     }
 
-    // Event listeners
     $('select.font').change(function() {
         var selectedFont = $(this).val();
         $('*').css('font-family', selectedFont);
@@ -126,8 +135,8 @@ $(document).ready(function () {
 
     $('.theme').change(function() {
         var selectedTheme = $(this).val();
-        $('html').attr('data-theme', selectedTheme); // Switch the theme
-        localStorage.setItem('theme', selectedTheme); // Save the selected theme in localStorage
+        $('html').attr('data-theme', selectedTheme);
+        localStorage.setItem('theme', selectedTheme);
     });
 
     update();
