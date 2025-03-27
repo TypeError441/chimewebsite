@@ -123,8 +123,8 @@ $(document).ready(function () {
 
     var savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
-        $('html').attr('data-theme', savedTheme);
-        $('.theme').val(savedTheme);
+        $("html").attr("data-theme", savedTheme);
+        $(".theme").val(savedTheme);
     }
 
     $('select.font').change(function() {
