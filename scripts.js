@@ -110,7 +110,7 @@ function update() {
     setTimeout(update, 1000);
 }
 
-// Start
+// On Ready
 
 $(document).ready(function () {
     $(".version").text(version);
