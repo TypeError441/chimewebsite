@@ -133,26 +133,11 @@ button:hover { cursor: pointer; background-color: var(--button-hover-background-
     width: 100%;
     padding: 10px;
     z-index: 1000;
+    background-color: var(--secondary-background-color);
 }
 
-.header { top: 0; background-color: var(--secondary-background-color); }
-
-.footer { bottom: 0; background-color: var(--secondary-background-color); }
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-}
-
-li { margin-right: 15px; }
+.header { top: 0; }
+.footer { bottom: 0; }
 
 .container {
     height: fit-content;
@@ -160,11 +145,9 @@ li { margin-right: 15px; }
 }
 
 .options, .period, .schedule {
-    padding: 20px;
+    padding: 10px;
     border-radius: 4px;
 }
-
-.content { display: flex; }
 
 /* Period Section */
 .period {
