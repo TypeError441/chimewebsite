@@ -155,10 +155,8 @@ ul {
 li { margin-right: 15px; }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    height: calc(100vh - 50px);
-    padding-top: 50px;
+    height: fit-content;
+    padding: 50px 0;
 }
 
 .options, .period, .schedule {
