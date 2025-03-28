@@ -83,7 +83,7 @@
     color: var(--color);
 }
 
-body { background-color: var(--background-color); }
+body { background-color: var(--background-color); padding-top: 50px; }
 
 body.loaded * { transition: color 0.2s, background-color 0.2s; }
 
