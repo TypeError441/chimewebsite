@@ -78,14 +78,12 @@ input {
 button, select {
     padding: 1em;
     border: none;
-    border-radius: 1em;
+    border-radius: 4px;
     background-color: var(--button-background-color);
     color: var(--button-color);
 }
 
-option {
-    color: var(--button-color);
-}
+option { color: var(--button-color); }
 
 button:hover { cursor: pointer; background-color: var(--button-hover-background-color); }
 
@@ -94,6 +92,7 @@ button:hover { cursor: pointer; background-color: var(--button-hover-background-
 .leave:hover { background-color: var(--button-leave-hover-background-color); }
 
 .settings { background: none; }
+.settings:hover { background: none; }
 
 .header, .footer {
     position: fixed;
@@ -131,7 +130,7 @@ li { margin-right: 15px; }
 
 .options, .period, .schedule {
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 4px;
 }
 
 .content { display: flex; }
