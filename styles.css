@@ -148,14 +148,14 @@ button:hover { cursor: pointer; background-color: var(--button-hover-background-
 }
 
 .content {
-    width: calc(100vw - 100px);
-    max-width: 1200px;
+    width: 100%;
 }
 
 .options, .period, .schedule {
     padding: 10px;
     border-radius: 5px;
     width: 100%;
+    max-width: none;
 }
 
 /* Period Section */
