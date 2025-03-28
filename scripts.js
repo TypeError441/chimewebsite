@@ -1,6 +1,6 @@
 // Variables
 
-const version = "v1.2";
+const version = "v1.3";
 
 var schedules = {
     Normal: [
@@ -64,6 +64,7 @@ var currentSchedule = schedules[scheduleKeys[dayIndex]];
 // Functions
 
 function updateSchedule() {
+    // Schedule
     let now = new Date();
     $(".schedule").empty(); 
     let n = $("<p class='title'>").text("Schedule");
@@ -85,7 +86,41 @@ function updateSchedule() {
         $(".schedule").append(periodText);
     }
 
-    $(".text-schedule").text(scheduleKeys[dayIndex]); // Show schedule type
+    $(".text-schedule").text(scheduleKeys[dayIndex]);
+    
+    // Current Period
+    let foundNextPeriod = false;
+
+    for (let [hour, minute, text] of currentSchedule) {
+        let targetTime = new Date();
+        targetTime.setHours(hour, minute, 0, 0);
+
+        if (now < targetTime) {
+            let diff = targetTime - now;
+            let hours = Math.floor(diff / 1000 / 60 / 60);
+            let minutes = Math.floor((diff / 1000 / 60) % 60);
+            let seconds = Math.floor((diff / 1000) % 60);
+
+            let timeString = (hours > 0 ? `${hours}:` : "") + 
+                            `${minutes < 10 && hours > 0 ? "0" : ""}${minutes}:` +
+                            `${seconds < 10 ? "0" : ""}${seconds}`;
+
+            $(".text-timer").text(timeString);
+            $(document).attr("title", `${timeString} | ${text}`);
+            $(".text-period").text(text);
+            $(".text-schedule").text(scheduleKeys[dayIndex]);
+
+            foundNextPeriod = true;
+            break;
+        }
+    }
+
+    if (!foundNextPeriod) {
+        $(".text-timer").text("");
+        $(document).attr("title", "Free");
+        $(".text-period").text("School is over!");
+        $(".text-schedule").text(scheduleKeys[dayIndex]);
+    }
 }
 
 function update() {
