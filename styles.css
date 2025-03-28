@@ -142,26 +142,32 @@ button:hover { cursor: pointer; background-color: var(--button-hover-background-
 .container {
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Adds more space between stacked elements */
-    align-items: center; /* Optional: Center elements horizontally */
+    gap: 20px;
+    align-items: center;
     padding: 50px 0;
+}
+
+.content {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .options, .period, .schedule {
     padding: 10px;
     border-radius: 4px;
-    width: 90%; /* Makes them almost full width */
-    max-width: 1200px; /* Prevents them from being too wide on large screens */
+    width: 100%;
 }
 
 /* Period Section */
 .period {
     background-color: var(--secondary-background-color);
-    margin-bottom: 20px; /* Adds space between period and schedule */
+    margin-bottom: 20px;
 }
 
 /* Schedule Section */
 .schedule {
     background-color: var(--secondary-background-color);
-    margin-bottom: 20px;
 }
