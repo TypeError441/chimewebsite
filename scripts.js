@@ -65,38 +65,27 @@ var currentSchedule = schedules[scheduleKeys[dayIndex]];
 
 function updateSchedule() {
     let now = new Date();
-    let foundNextPeriod = false;
+    $(".schedule").empty(); 
+    let n = $("<p class='title'>").text("Schedule");
+    n.css("font-family", localStorage.getItem("font"));
+    $(".schedule").append(n);
 
-    for (let [hour, minute, text] of currentSchedule) {
+    for (let i = 0; i < currentSchedule.length; i++) {
+        let [hour, minute, text] = currentSchedule[i];
         let targetTime = new Date();
         targetTime.setHours(hour, minute, 0, 0);
+        let prevTime = i > 0 ? currentSchedule[i - 1] : [hour, minute]; 
+        let [prevHour, prevMinute] = prevTime;
+        let periodText = $("<p>").addClass("heading-1");
 
-        if (now < targetTime) {
-            let diff = targetTime - now;
-            let hours = Math.floor(diff / 1000 / 60 / 60);
-            let minutes = Math.floor((diff / 1000 / 60) % 60);
-            let seconds = Math.floor((diff / 1000) % 60);
+        periodText.text(`${prevHour}:${prevMinute < 10 ? "0" + prevMinute : prevMinute} - ${hour}:${minute < 10 ? "0" + minute : minute} | ${text}`);
 
-            let timeString = (hours > 0 ? `${hours}:` : "") + 
-                            `${minutes < 10 && hours > 0 ? "0" : ""}${minutes}:` +
-                            `${seconds < 10 ? "0" : ""}${seconds}`;
+        periodText.css("font-family", localStorage.getItem("font"));
 
-            $(".text-timer").text(timeString);
-            $(document).attr("title", `${timeString} | ${text}`);
-            $(".text-period").text(text);
-            $(".text-schedule").text(scheduleKeys[dayIndex]);
-
-            foundNextPeriod = true;
-            break;
-        }
+        $(".schedule").append(periodText);
     }
 
-    if (!foundNextPeriod) {
-        $(".text-timer").text("");
-        $(document).attr("title", "Free");
-        $(".text-period").text("School is over!");
-        $(".text-schedule").text(scheduleKeys[dayIndex]);
-    }
+    $(".text-schedule").text(scheduleKeys[dayIndex]); // Show schedule type
 }
 
 function update() {
@@ -109,14 +98,20 @@ function update() {
 $(document).ready(function () {
     $(".version").text(version);
 
+    // Get the selected font from localStorage
     var selectedFont = localStorage.getItem("font");
     if (selectedFont) {
+        // Apply font to the whole page and the schedule
         $("*").css("font-family", selectedFont);
+        $(".schedule").css("font-family", selectedFont);  // Make sure to apply the font to the schedule too
         $("select.font").val(selectedFont);
     }
+
+    // Change font when the user selects from dropdown
     $("select.font").change(function() {
         var selectedFont = $(this).val();
         $("*").css("font-family", selectedFont);
+        $(".schedule").css("font-family", selectedFont); // Apply to schedule
         localStorage.setItem("font", selectedFont);
     });
 
@@ -125,6 +120,7 @@ $(document).ready(function () {
         $("html").attr("data-theme", savedTheme);
         $(".theme").val(savedTheme);
     }
+
     $(".theme").change(function() {
         var selectedTheme = $(this).val();
         $("html").attr("data-theme", selectedTheme);
@@ -165,6 +161,6 @@ $(document).ready(function () {
         $("body").hide();
         window.location.href="https://classroom.google.com/";
     });
-    
+
     update();
 });
