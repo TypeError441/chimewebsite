@@ -170,7 +170,7 @@ li { margin-right: 15px; }
 .period {
     flex: 1;
     background-color: var(--secondary-background-color);
-    margin: 0 10px 0 20px;
+    margin: 10px 0 20px 0;
 }
 
 /* Schedule Section */
