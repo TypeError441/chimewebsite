@@ -186,7 +186,7 @@ $(document).ready(function () {
         var currentSetting = localStorage.getItem("settings") === "true";
         localStorage.setItem("settings", currentSetting ? "false" : "true");
         
-        $(".optionsButtons").toggle(200);
+        $(".optionsButtons").slideToggle(200);
         $(".settings").text($(".settings").text() === "▼" ? "▲" : "▼");
 
         $(".leave").text($(".leave").text() === "X" ? "Classroom (Panic)" : "X");
@@ -194,7 +194,7 @@ $(document).ready(function () {
 
     $(".leave").click(function() {
         $("body").hide();
-        $("body").show(2000);
+        $("body").slideDown(2000);
         window.location.href="https://classroom.google.com/";
     });
 
