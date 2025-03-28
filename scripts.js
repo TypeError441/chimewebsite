@@ -139,5 +139,9 @@ $(document).ready(function () {
         localStorage.setItem('theme', selectedTheme);
     });
 
+    $(document).ready(function() {
+        $('body').addClass('loaded');
+    });
+
     update();
 });

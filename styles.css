@@ -2,22 +2,6 @@
 
 /* Default Theme Variables */
 :root {
-    --background-color: #ffffff;
-    --color: #000000;
-
-    --button-background-color: #cbcbcb;
-    --button-hover-background-color: #b8b8b8;
-    --button-color: #000000;
-
-    --button-leave-background-color: #ff5f5f;
-    --button-leave-hover-background-color: #ff3737;
-    --button-leave-color: #000000;
-
-    --secondary-background-color: #e2e2e2;
-}
-
-/* Dark Theme */
-[data-theme="dark"] {
     --background-color: #343a40;
     --color: #ffffff;
 
@@ -30,15 +14,63 @@
     --secondary-background-color: #2d3237;
 }
 
-/* Light Theme */
-[data-theme="light"] {
-    --background-color: #ffffff;
-    --color: #000000;
+[data-theme="default-dark"] {
+    --background-color: #1e1e1e;
+    --color: #f5f5f5;
 
-    --button-background-color: #e8e8e8;
-    --button-hover-background-color: #d6d6d6;
+    --button-background-color: #3a3f44;
+    --button-hover-background-color: #50565c;
+    --button-color: #ffffff;
 
-    --secondary-background-color: #e8e8e8;
+    --button-leave-background-color: #ff4c4c;
+    --button-leave-hover-background-color: #e63c3c;
+    --button-leave-color: #ffffff;
+
+    --secondary-background-color: #292d32;
+}
+
+[data-theme="default-light"] {
+    --background-color: #f9f9f9;
+    --color: #202124;
+
+    --button-background-color: #d2dadc;
+    --button-hover-background-color: #c5cece;
+    --button-color: #000000;
+
+    --button-leave-background-color: #ff4c4c;
+    --button-leave-hover-background-color: #e63c3c;
+    --button-leave-color: #ffffff;
+
+    --secondary-background-color: #f2f4f8;
+}
+
+[data-theme="blue-dark"] {
+    --background-color: #1a1d26;
+    --color: #e0e7ff;
+
+    --button-background-color: #4c5c7f;
+    --button-hover-background-color: #3e4b69;
+    --button-color: #ffffff;
+
+    --button-leave-background-color: #ff4c4c;
+    --button-leave-hover-background-color: #e63c3c;
+    --button-leave-color: #ffffff;
+
+    --secondary-background-color: #2d364b;
+}
+
+[data-theme="blue-light"] {
+    --background-color: #e0f1ff;
+    --color: #1a1d26;
+
+    --button-background-color: #c1d9ff;
+    --button-hover-background-color: #a6c8ff;
+
+    --button-leave-background-color: #ff4c4c;
+    --button-leave-hover-background-color: #e63c3c;
+    --button-leave-color: #ffffff;
+
+    --secondary-background-color: #c8e0ff;
 }
 
 /* Global Styles */
