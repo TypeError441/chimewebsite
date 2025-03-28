@@ -148,7 +148,7 @@ button:hover { cursor: pointer; background-color: var(--button-hover-background-
 }
 
 .content {
-    width: 90%;
+    width: calc(100vw - 100px);
     max-width: 1200px;
     display: flex;
     flex-direction: column;
