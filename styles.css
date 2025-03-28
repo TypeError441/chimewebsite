@@ -136,8 +136,6 @@ option { color: var(--button-color); }
     z-index: 1000;
     background-color: var(--secondary-background-color);
 }
-    background-color: var(--secondary-background-color);
-}
 
 .header { top: 0; }
 .footer { bottom: 0; }
