@@ -150,14 +150,11 @@ button:hover { cursor: pointer; background-color: var(--button-hover-background-
 .content {
     width: calc(100vw - 100px);
     max-width: 1200px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
 }
 
 .options, .period, .schedule {
     padding: 10px;
-    border-radius: 4px;
+    border-radius: 5px;
     width: 100%;
 }
 
