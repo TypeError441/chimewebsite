@@ -193,7 +193,8 @@ $(document).ready(function () {
     });
 
     $(".leave").click(function() {
-        $("body").hide();
+        $(".header").text("Reload the page");
+        $(".container").hide();
         window.location.href="https://classroom.google.com/";
     });
 
