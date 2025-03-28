@@ -140,25 +140,27 @@ button:hover { cursor: pointer; background-color: var(--button-hover-background-
 .footer { bottom: 0; }
 
 .container {
-    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adds space between stacked elements */
+    align-items: center; /* Optional: Center elements horizontally */
     padding: 50px 0;
 }
 
 .options, .period, .schedule {
     padding: 10px;
     border-radius: 4px;
+    width: 100%; /* Ensures full width in container */
 }
 
 /* Period Section */
 .period {
-    flex: 1;
     background-color: var(--secondary-background-color);
-    margin: 10px 0 20px 0;
+    margin: 0;
 }
 
 /* Schedule Section */
 .schedule {
-    flex: 1;
     background-color: var(--secondary-background-color);
-    margin: 0 20px 0 10px;
+    margin: 0;
 }
