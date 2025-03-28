@@ -63,12 +63,6 @@ var currentSchedule = schedules[scheduleKeys[dayIndex]];
 
 // Functions
 
-function switchSchedule() {
-    dayIndex = (dayIndex + 1) % scheduleKeys.length;
-    currentSchedule = schedules[scheduleKeys[dayIndex]];
-    updateSchedule();
-}
-
 function updateSchedule() {
     let now = new Date();
     let foundNextPeriod = false;
@@ -117,29 +111,60 @@ $(document).ready(function () {
 
     var selectedFont = localStorage.getItem("font");
     if (selectedFont) {
-        $('*').css('font-family', selectedFont);
-        $('select.font').val(selectedFont);
+        $("*").css("font-family", selectedFont);
+        $("select.font").val(selectedFont);
     }
+    $("select.font").change(function() {
+        var selectedFont = $(this).val();
+        $("*").css("font-family", selectedFont);
+        localStorage.setItem("font", selectedFont);
+    });
 
-    var savedTheme = localStorage.getItem('theme');
+    var savedTheme = localStorage.getItem("theme");
     if (savedTheme) {
         $("html").attr("data-theme", savedTheme);
         $(".theme").val(savedTheme);
     }
-
-    $('body').addClass('loaded');
-
-    $('select.font').change(function() {
-        var selectedFont = $(this).val();
-        $('*').css('font-family', selectedFont);
-        localStorage.setItem("font", selectedFont);
-    });
-
-    $('.theme').change(function() {
+    $(".theme").change(function() {
         var selectedTheme = $(this).val();
-        $('html').attr('data-theme', selectedTheme);
-        localStorage.setItem('theme', selectedTheme);
+        $("html").attr("data-theme", selectedTheme);
+        localStorage.setItem("theme", selectedTheme);
+    });
+    $("body").addClass("loaded");
+
+    $(".schedules").val(dayIndex);
+    $(".schedules").change(function() {
+        dayIndex = $(this).val();
+        currentSchedule = schedules[scheduleKeys[dayIndex]];
+        updateSchedule();
     });
 
+    var settingsOpened = localStorage.getItem("settings");
+    if (settingsOpened !== null) {
+        if (settingsOpened === "false") {
+            $(".optionsButtons").toggle();
+            $(".settings").text("▼");
+
+            $(".leave").text("X");
+        }
+    } else {
+        localStorage.setItem("settings", "true");
+    }
+
+    $(".settings").click(function() {
+        var currentSetting = localStorage.getItem("settings") === "true";
+        localStorage.setItem("settings", currentSetting ? "false" : "true");
+        
+        $(".optionsButtons").toggle(200);
+        $(".settings").text($(".settings").text() === "▼" ? "▲" : "▼");
+
+        $(".leave").text($(".leave").text() === "X" ? "Classroom (Panic)" : "X");
+    });
+
+    $(".leave").click(function() {
+        $("body").hide();
+        window.location.href="https://classroom.google.com/";
+    });
+    
     update();
 });
