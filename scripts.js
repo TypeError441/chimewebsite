@@ -127,6 +127,8 @@ $(document).ready(function () {
         $(".theme").val(savedTheme);
     }
 
+    $('body').addClass('loaded');
+
     $('select.font').change(function() {
         var selectedFont = $(this).val();
         $('*').css('font-family', selectedFont);
@@ -137,10 +139,6 @@ $(document).ready(function () {
         var selectedTheme = $(this).val();
         $('html').attr('data-theme', selectedTheme);
         localStorage.setItem('theme', selectedTheme);
-    });
-
-    $(document).ready(function() {
-        $('body').addClass('loaded');
     });
 
     update();
