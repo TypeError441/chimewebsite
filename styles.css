@@ -83,7 +83,7 @@
     color: var(--color);
 }
 
-body { background-color: var(--background-color); }
+body { background-color: var(--background-color); padding: 50px 0; }
 
 body.loaded * { transition: color 0.2s, background-color 0.2s; }
 
@@ -115,13 +115,13 @@ button, select {
     background-color: var(--button-background-color);
     color: var(--button-color);
 }
+button:hover { cursor: pointer; background-color: var(--button-hover-background-color); }
 
 option { color: var(--button-color); }
 
-button:hover { cursor: pointer; background-color: var(--button-hover-background-color); }
+.secret { background-color: none; padding: none; height: 100%; }
 
 .leave { background-color: var(--button-leave-background-color); color: var(--button-leave-color); }
-
 .leave:hover { background-color: var(--button-leave-hover-background-color); }
 
 .settings { background: none; }
@@ -133,51 +133,31 @@ button:hover { cursor: pointer; background-color: var(--button-hover-background-
     width: 100%;
     padding: 10px;
     z-index: 1000;
+    background-color: var(--secondary-background-color);
 }
 
-.header { top: 0; background-color: var(--secondary-background-color); }
-
-.footer { bottom: 0; background-color: var(--secondary-background-color); }
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-}
-
-li { margin-right: 15px; }
+.header { top: 0; }
+.footer { bottom: 0; }
 
 .container {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 50px);
-    padding-top: 50px;
+    gap: 20px;
+    align-items: center;
 }
+
+.content { width: calc(100vw - 50px); }
 
 .options, .period, .schedule {
-    padding: 20px;
-    border-radius: 4px;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: none;
 }
 
-.content { display: flex; }
-
-/* Period Section */
 .period {
-    flex: 1;
     background-color: var(--secondary-background-color);
-    margin: 0 10px 0 20px;
+    margin-bottom: 20px;
 }
 
-/* Schedule Section */
-.schedule {
-    flex: 1;
-    background-color: var(--secondary-background-color);
-    margin: 0 20px 0 10px;
-}
+.schedule { background-color: var(--secondary-background-color); }
