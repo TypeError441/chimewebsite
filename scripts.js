@@ -271,6 +271,7 @@ $(document).ready(function () {
 // Easter eggs
 const secretKeyCodes = [
     ["b", "e", "l", "l"], // Activate Roboto
+    ["t", "i", "t", "l", "e"] // Display time in title
 ];
 
 let currentInputs = [];
@@ -300,6 +301,8 @@ function triggerSecretAction(code) {
             localStorage.setItem("font", "'Roboto', sans-serif");
             console.log("Secret code:", code.join(""));
             break;
+            case "title":
+            localStorage.setItem("displayInTitle", localStorage.getItem("displayInTitle") === "true" ? "false" : "true");
         default:
             console.log("Unknown secret code:", code.join(""));
             break;
