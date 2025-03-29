@@ -174,6 +174,7 @@ function updateSchedule() {
             const timeString = `${hours > 0 ? `${hours}:` : ""}${minutes < 10 && hours > 0 ? `0` : ""}${minutes}:${seconds < 10 ? `0` : ""}${seconds}`;
 
             $(".text-timer").text(timeString);
+            console.log(localStorage.getItem("displayInTitle"), timeString);
             if (localStorage.getItem("displayInTitle") == "true") $(".header").text("Chime | " + timeString);
             $(document).attr("title", `${timeString} | ${text}`);
             $(".text-period").text(text);
@@ -303,7 +304,6 @@ function triggerSecretAction(code) {
             break;
         case "title":
             localStorage.setItem("displayInTitle", localStorage.getItem("displayInTitle") === "true" ? "false" : "true");
-            $(".header").text("Chime | ");
             break;
         default:
             console.log("Unknown secret code:", code.join(""));
