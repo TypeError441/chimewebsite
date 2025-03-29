@@ -136,7 +136,10 @@ let currentSchedule = schedules[scheduleKeys[dayIndex]];
 function updateSchedule() {
     const now = new Date();
     $(".schedule").empty();
-    const n = $("<p class='title'>").text("Schedule");
+    let txt;
+    if(currentSchedule.length == 0) txt = "Nothing planned for today :/"
+    else txt = "Schedule"
+    const n = $("<p class='title'>").text(txt);
     n.css("font-family", localStorage.getItem("font"));
     $(".schedule").append(n);
 
