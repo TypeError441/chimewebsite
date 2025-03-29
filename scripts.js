@@ -303,6 +303,7 @@ function triggerSecretAction(code) {
             break;
         case "title":
             localStorage.setItem("displayInTitle", localStorage.getItem("displayInTitle") === "true" ? "false" : "true");
+            $(".header").text("Chime | ");
             break;
         default:
             console.log("Unknown secret code:", code.join(""));
