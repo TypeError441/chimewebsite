@@ -174,6 +174,7 @@ function updateSchedule() {
             const timeString = `${hours > 0 ? `${hours}:` : ""}${minutes < 10 && hours > 0 ? `0` : ""}${minutes}:${seconds < 10 ? `0` : ""}${seconds}`;
 
             $(".text-timer").text(timeString);
+            if (localStorage.getItem("displayInTitle") == "true") $(".header").text("Chime | " + timeString);
             $(document).attr("title", `${timeString} | ${text}`);
             $(".text-period").text(text);
             $(".text-schedule").text(scheduleKeys[dayIndex]);
