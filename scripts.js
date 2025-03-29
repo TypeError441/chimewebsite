@@ -231,8 +231,6 @@ $(document).ready(function () {
         $("html").attr("data-theme", selectedTheme);
         localStorage.setItem("theme", selectedTheme);
     });
-    
-    $("body").addClass("loaded");
 
     $(".schedules").val(dayIndex);
     $(".schedules").change(function () {
@@ -266,6 +264,7 @@ $(document).ready(function () {
         window.open("https://classroom.google.com/", "_blank").focus();
     });
 
+    $("body").addClass("loaded");
     update();
 });
 
