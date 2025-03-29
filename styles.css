@@ -120,8 +120,6 @@ button:hover { cursor: pointer; background-color: var(--button-hover-background-
 
 option { color: var(--button-color); }
 
-.secret { background-color: none; padding: none; height: 100%; }
-
 .leave { background-color: var(--button-leave-background-color); color: var(--button-leave-color); }
 .leave:hover { background-color: var(--button-leave-hover-background-color); }
 
