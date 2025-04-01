@@ -158,8 +158,11 @@ option { color: var(--button-color); }
 
 .period {
     background-color: none;
-    margin-bottom: 20px;
+    margin: auto;
     width: fit-content;
 }
 
-.schedule { background-color: var(--secondary-background-color); }
+.schedule {
+    background-color: var(--secondary-background-color);
+    margin-top: 20px;
+}
