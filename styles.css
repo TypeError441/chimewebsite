@@ -157,9 +157,9 @@ option { color: var(--button-color); }
 }
 
 .period {
-    background-color: var(--secondary-background-color);
+    background-color: none;
     margin-bottom: 20px;
-    margin-bottom: 20px;
+    width: fit-content;
 }
 
 .schedule { background-color: var(--secondary-background-color); }
