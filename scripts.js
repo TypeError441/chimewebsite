@@ -270,7 +270,7 @@ $(document).ready(function () {
 // Easter eggs
 const secretKeyCodes = [
     ["b", "e", "l", "l"], // Activate Roboto
-    ["t", "i", "t", "l", "e"] // Display time in title
+    ["t", "i", "t", "l", "e"], // Display time in title
     ["p", "r", "o", "g", "r", "e", "s", "s"] // Show progress bar
 ];
 
