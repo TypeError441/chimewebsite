@@ -278,7 +278,7 @@ const secretKeyCodes = [
     ["t", "i", "t", "l", "e"], // Display time in title
     ["p", "r", "o", "g", "r", "e", "s", "s"], // Show progress bar
     ["c", "p"], // Show pizza
-    ["s", "u", "s", "p", "e", "n", "s", "e"], // Show suspense...
+    ["s", "u", "s"], // Show suspense...
 ];
 
 let currentInputs = [];
@@ -320,7 +320,7 @@ function triggerSecretAction(code) {
             $(".pizza").show();
             $(".pizza").hide(3000);
             break;
-        case "suspense":
+        case "sus":
             $(".suspense").show();
             $(".suspense").hide(3000);
             break;
