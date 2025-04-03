@@ -1,10 +1,8 @@
 // Variables
 var version;
-navigator.getBattery().then(battery => function() {
-    batteryLvl = battery.level
+navigator.getBattery().then(battery => {
+    version = battery.level;
 });
-const version = batteryLvl;
-
 const schedules = {
     Normal: [
         [8, 25, "Free"],
