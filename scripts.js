@@ -275,8 +275,8 @@ $(document).ready(function () {
 const secretKeyCodes = [
     ["b", "e", "l", "l"], // Activate Roboto
     ["t", "i", "t", "l", "e"], // Display time in title
-    ["p", "r", "o", "g", "r", "e", "s", "s"] // Show progress bar
-    ["c". "p"] // Show progress bar
+    ["p", "r", "o", "g", "r", "e", "s", "s"], // Show progress bar
+    ["c", "p"] // Show progress bar
 ];
 
 let currentInputs = [];
