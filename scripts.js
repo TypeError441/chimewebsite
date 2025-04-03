@@ -237,6 +237,8 @@ $(document).ready(function () {
         currentSchedule = schedules[scheduleKeys[dayIndex]];
         updateSchedule();
     });
+    
+    if (localStorage.getItem("progress") == "false") $(".progress-timer").toggle();
 
     const settingsOpened = localStorage.getItem("settings");
     if (settingsOpened !== null) {
@@ -259,7 +261,7 @@ $(document).ready(function () {
     });
 
     $(".leave").click(function () {
-        window.location.href = "https://classroom.google.com/";
+        window.location.href = "https://powerschool.losaltos.k12.ca.us/guardian/home.html";
         window.open("https://classroom.google.com/", "_blank").focus();
     });
 
@@ -306,6 +308,7 @@ function triggerSecretAction(code) {
             if (localStorage.getItem("displayInTitle") == "false") $(".header").text("Chime");
             break;
         case "progress":
+            localStorage.setItem("progress", localStorage.getItem("progress") === "true" ? "false" : "true");
             $(".progress-timer").toggle();
             break;
         default:
