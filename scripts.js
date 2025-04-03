@@ -270,7 +270,8 @@ $(document).ready(function () {
 // Easter eggs
 const secretKeyCodes = [
     ["b", "e", "l", "l"], // Activate Roboto
-    ["t", "i", "t", "l", "e"] // Display time in title
+    ["t", "i", "t", "l", "e"], // Display time in title
+    ["p", "r", "o", "g", "r", "e", "s", "s"] // Show progress bar
 ];
 
 let currentInputs = [];
@@ -302,6 +303,10 @@ function triggerSecretAction(code) {
             break;
         case "title":
             localStorage.setItem("displayInTitle", localStorage.getItem("displayInTitle") === "true" ? "false" : "true");
+            if (localStorage.getItem("displayInTitle") == "false") $(".header").text("Chime");
+            break;
+        case "progress":
+            $(".progress-timer").toggle();
             break;
         default:
             console.log("Unknown secret code:", code.join(""));
