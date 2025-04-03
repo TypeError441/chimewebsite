@@ -276,7 +276,8 @@ const secretKeyCodes = [
     ["b", "e", "l", "l"], // Activate Roboto
     ["t", "i", "t", "l", "e"], // Display time in title
     ["p", "r", "o", "g", "r", "e", "s", "s"], // Show progress bar
-    ["c", "p"] // Show progress bar
+    ["c", "p"], // Show pizza
+    ["s", "u", "s", "p", "e", "n", "s", "e"], // Show suspense...
 ];
 
 let currentInputs = [];
@@ -317,6 +318,10 @@ function triggerSecretAction(code) {
         case "cp":
             $(".pizza").show();
             $(".pizza").hide(3000);
+            break;
+        case "suspense":
+            $(".suspense").show();
+            $(".suspense").hide(3000);
             break;
         default:
             console.log("Unknown secret code:", code.join(""));
