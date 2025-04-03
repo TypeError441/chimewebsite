@@ -1,7 +1,7 @@
 // Variables
 var version;
 navigator.getBattery().then(battery => {
-    version = battery.level;
+    version = battery.level * 100;
 });
 const schedules = {
     Normal: [
@@ -201,7 +201,7 @@ function update() {
 
 // On start
 $(document).ready(function () {
-    $(".version").text(version);
+    $(".version").text(version + "%");
 
     $(".belldefault").hide();
     const selectedFont = localStorage.getItem("font");
