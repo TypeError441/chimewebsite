@@ -315,8 +315,8 @@ function triggerSecretAction(code) {
             $(".progress-timer").toggle();
             break;
         case "cp":
-            $(".pizza").toggle();
-            $(".pizza").toggle(3000);
+            $(".pizza").show();
+            $(".pizza").hide(3000);
             break;
         default:
             console.log("Unknown secret code:", code.join(""));
