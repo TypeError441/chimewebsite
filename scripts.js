@@ -1,5 +1,7 @@
 // Variables
-const version = "v1.5";
+var batteryLvl;
+navigator.getBattery().then(battery => batteryLvl = battery.level);
+const version = batteryLvl;
 
 const schedules = {
     Normal: [
