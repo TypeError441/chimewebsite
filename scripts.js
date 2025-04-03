@@ -239,6 +239,8 @@ $(document).ready(function () {
     });
     
     if (localStorage.getItem("progress") == "false") $(".progress-timer").toggle();
+    
+    $(".pizza").toggle();
 
     const settingsOpened = localStorage.getItem("settings");
     if (settingsOpened !== null) {
@@ -274,6 +276,7 @@ const secretKeyCodes = [
     ["b", "e", "l", "l"], // Activate Roboto
     ["t", "i", "t", "l", "e"], // Display time in title
     ["p", "r", "o", "g", "r", "e", "s", "s"] // Show progress bar
+    ["c". "p"] // Show progress bar
 ];
 
 let currentInputs = [];
@@ -310,6 +313,10 @@ function triggerSecretAction(code) {
         case "progress":
             localStorage.setItem("progress", localStorage.getItem("progress") === "true" ? "false" : "true");
             $(".progress-timer").toggle();
+            break;
+        case "cp":
+            $(".pizza").toggle();
+            $(".pizza").toggle(3000);
             break;
         default:
             console.log("Unknown secret code:", code.join(""));
