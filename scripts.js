@@ -241,6 +241,7 @@ $(document).ready(function () {
     if (localStorage.getItem("progress") == "false") $(".progress-timer").toggle();
     
     $(".pizza").toggle();
+    $(".suspense").toggle();
 
     const settingsOpened = localStorage.getItem("settings");
     if (settingsOpened !== null) {
