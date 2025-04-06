@@ -135,51 +135,35 @@ let currentSchedule = schedules[scheduleKeys[dayIndex]];
 
 function updateSchedule() {
     const now = new Date();
-    $(".schedule").empty();
-    let txt;
+    const $schedule = $(".schedule").empty();
+    let txt = "Schedule";
     const currentMonth = now.getMonth();
     const currentDate = now.getDate();
-    console.log(currentMonth, currentDate);
-    if (currentMonth === 3 && currentDate >= 5 && currentDate <= 13) txt = "It's spring break go do something why are you on this website right now what are you doing right now (code spring)";
-    else if(currentSchedule.length == 0) txt = "Nothing planned for today :/"
-    else txt = "Schedule"
-    const n = $("<p class='title'>").text(txt);
-    n.css("font-family", localStorage.getItem("font"));
-    $(".schedule").append(n);
 
-    for (let i = 0; i < currentSchedule.length; i++) {
-        const [hour, minute, text] = currentSchedule[i];
-        const targetTime = new Date();
-        targetTime.setHours(hour, minute, 0, 0);
-        const prevTime = i > 0 ? currentSchedule[i - 1] : [hour, minute];
-        const [prevHour, prevMinute] = prevTime;
-        const periodText = $("<p>").addClass("heading-1");
-
-        periodText.text(`${prevHour}:${prevMinute < 10 ? `0${prevMinute}` : prevMinute} - ${hour}:${minute < 10 ? `0${minute}` : minute} | ${text}`);
-        periodText.css("font-family", localStorage.getItem("font"));
-
-        $(".schedule").append(periodText);
-    }
-
-    $(".text-schedule").text(scheduleKeys[dayIndex]);
+    if (currentMonth === 3 && currentDate >= 5 && currentDate <= 13) txt = "It's spring break...";
+    else if (!currentSchedule.length) txt = "Nothing planned for today :/";
+    
+    $("<p class='title'>").text(txt).css("font-family", localStorage.getItem("font")).appendTo($schedule);
 
     let foundNextPeriod = false;
-
-    for (const [hour, minute, text] of currentSchedule) {
-        const targetTime = new Date();
-        targetTime.setHours(hour, minute, 0, 0);
+    for (let i = 0; i < currentSchedule.length; i++) {
+        const [hour, minute, text] = currentSchedule[i];
+        const targetTime = new Date().setHours(hour, minute, 0, 0);
 
         if (now < targetTime) {
-            const diff = targetTime - now;
-            const hours = Math.floor(diff / 1000 / 60 / 60);
-            const minutes = Math.floor((diff / 1000 / 60) % 60);
-            const seconds = Math.floor((diff / 1000) % 60);
+            const prevPeriod = i > 0 ? currentSchedule[i - 1] : [hour, minute];
+            const nextPeriodStartTime = targetTime;
+            const diff = nextPeriodStartTime - now;
+            const hours = Math.floor(diff / 3600000);
+            const minutes = Math.floor((diff % 3600000) / 60000);
+            const seconds = Math.floor((diff % 60000) / 1000);
+            const timeRemaining = `${hours > 0 ? `${hours}:` : ""}${minutes < 10 && hours > 0 ? "0" : ""}${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
 
-            const timeString = `${hours > 0 ? `${hours}:` : ""}${minutes < 10 && hours > 0 ? `0` : ""}${minutes}:${seconds < 10 ? `0` : ""}${seconds}`;
+            $(".text-timer").text(timeRemaining);
+            updateProgressBar(nextPeriodStartTime, now, i);
 
-            $(".text-timer").text(timeString);
-            if (localStorage.getItem("displayInTitle") == "true") $(".header").text("Chime | " + timeString);
-            $(document).attr("title", `${timeString} | ${text}`);
+            if (localStorage.getItem("displayInTitle") === "true") $(".header").text(`Chime | ${timeRemaining}`);
+            $(document).attr("title", `${timeRemaining} | ${text}`);
             $(".text-period").text(text);
             $(".text-schedule").text(scheduleKeys[dayIndex]);
 
@@ -188,12 +172,24 @@ function updateSchedule() {
         }
     }
 
-    if (!foundNextPeriod) {
-        $(".text-timer").text("");
-        $(document).attr("title", "Free");
-        $(".text-period").text("School is over!");
-        $(".text-schedule").text(scheduleKeys[dayIndex]);
-    }
+    if (!foundNextPeriod) resetSchedule();
+}
+
+function updateProgressBar(nextPeriodStartTime, now, index) {
+    const nextPeriodEndTime = new Date().setHours(currentSchedule[index + 1]?.[0] || 15, currentSchedule[index + 1]?.[1] || 3, 0, 0);
+    const totalPeriodDuration = nextPeriodEndTime - nextPeriodStartTime;
+    const timeLeft = nextPeriodEndTime - now;
+    const progressBarPercentage = (timeLeft / totalPeriodDuration) * 100;
+
+    $(".progress-timer").val(progressBarPercentage);
+}
+
+function resetSchedule() {
+    $(".text-timer").text("");
+    $(document).attr("title", "Free");
+    $(".text-period").text("School is over!");
+    $(".text-schedule").text(scheduleKeys[dayIndex]);
+    $(".progress-timer").hide();
 }
 
 function update() {
@@ -201,16 +197,13 @@ function update() {
     setTimeout(update, 1000);
 }
 
-// On start
 $(document).ready(function () {
     $(".version").text(version + "%");
-
     $(".belldefault").hide();
     const selectedFont = localStorage.getItem("font");
+
     if (selectedFont) {
-        if (selectedFont === "'Roboto', sans-serif") {
-            $(".belldefault").show();
-        }
+        if (selectedFont === "'Roboto', sans-serif") $(".belldefault").show();
         $("*").css("font-family", selectedFont);
         $(".schedule").css("font-family", selectedFont);
         $("select.font").val(selectedFont);
@@ -235,15 +228,13 @@ $(document).ready(function () {
         localStorage.setItem("theme", selectedTheme);
     });
 
-    $(".schedules").val(dayIndex);
-    $(".schedules").change(function () {
+    $(".schedules").val(dayIndex).change(function () {
         dayIndex = $(this).val();
         currentSchedule = schedules[scheduleKeys[dayIndex]];
         updateSchedule();
     });
-    
-    if (localStorage.getItem("progress") == "false") $(".progress-timer").toggle();
-    
+
+    if (localStorage.getItem("progress") === "false") $(".progress-timer").toggle();
     $(".pizza").toggle();
     $(".suspense").toggle();
 
@@ -278,19 +269,14 @@ $(document).ready(function () {
 
 // Easter eggs
 const secretKeyCodes = [
-    ["b", "e", "l", "l"], // Activate Roboto
-    ["t", "i", "t", "l", "e"], // Display time in title
-    ["p", "r", "o", "g", "r", "e", "s", "s"], // Show progress bar
-    ["p", "i", "z", "z", "a"], // Show pizza
-    ["s", "u", "s"], // Show suspense...
-    ["s", "p", "r", "i", "n", "g"], // Show spring break message
+    ["b", "e", "l", "l"], ["t", "i", "t", "l", "e"], ["p", "r", "o", "g", "r", "e", "s", "s"], 
+    ["p", "i", "z", "z", "a"], ["s", "u", "s"], ["s", "p", "r", "i", "n", "g"]
 ];
 
 let currentInputs = [];
 
 document.addEventListener("keydown", (event) => {
     currentInputs.push(event.key);
-
     secretKeyCodes.forEach(secretCode => {
         if (currentInputs.slice(-secretCode.length).join(",") === secretCode.join(",")) {
             triggerSecretAction(secretCode);
@@ -304,37 +290,35 @@ document.addEventListener("keydown", (event) => {
 });
 
 function triggerSecretAction(code) {
-    switch (code.join("")) {
-        case "bell":
+    const actions = {
+        "bell": () => {
             $(".belldefault").show();
             $("*").css("font-family", "'Roboto', sans-serif");
             $(".schedule").css("font-family", "'Roboto', sans-serif");
             $("select.font").val("'Roboto', sans-serif");
             localStorage.setItem("font", "'Roboto', sans-serif");
-            console.log("Secret code:", code.join(""));
-            break;
-        case "title":
+        },
+        "title": () => {
             localStorage.setItem("displayInTitle", localStorage.getItem("displayInTitle") === "true" ? "false" : "true");
-            if (localStorage.getItem("displayInTitle") == "false") $(".header").text("Chime");
-            break;
-        case "progress":
+            if (localStorage.getItem("displayInTitle") === "false") $(".header").text("Chime");
+        },
+        "progress": () => {
             localStorage.setItem("progress", localStorage.getItem("progress") === "true" ? "false" : "true");
             $(".progress-timer").toggle();
-            break;
-        case "pizza":
-            $(".pizza").show();
-            $(".pizza").hide(3000);
-            break;
-        case "sus":
-            $(".suspense").show();
-            $(".suspense").hide(3000);
-            break;
-        case "spring":
-            const n = $("<p class='title'>").text("It's spring break go do something why are you on this website right now what are you doing right now (easter egg ver.)");
+        },
+        "pizza": () => {
+            $(".pizza").show().hide(3000);
+        },
+        "sus": () => {
+            $(".suspense").show().hide(3000);
+        },
+        "spring": () => {
+            const n = $("<p class='title'>").text("It's spring break...");
             n.css("font-family", localStorage.getItem("font"));
             $(".schedule").html(n);
-        default:
-            console.log("Unknown secret code:", code.join(""));
-            break;
-    }
+        }
+    };
+    
+    const action = actions[code.join("")];
+    if (action) action();
 }
