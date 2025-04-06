@@ -19,7 +19,7 @@ const schedules = {
         [13, 28, "Passing to Period 6"],
         [14, 14, "Period 6"],
         [14, 17, "Passing to Period 7"],
-        [19, 3, "Period 7"]
+        [15, 3, "Period 7"]
     ],
     Tutorial: [
         [8, 25, "Free"],
@@ -126,7 +126,8 @@ const schedules = {
         [14, 23, "Passing to H"],
         [15, 3, "H"]
     ],
-    Weekend: []
+    Weekend: [
+        [22, 3, "Period 7"]]
 };
 
 const scheduleKeys = ["Weekend", "Normal", "Tutorial", "Even", "Odd", "Advisory", "Weekend", "Minimum", "Assembly"];
