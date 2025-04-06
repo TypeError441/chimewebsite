@@ -189,7 +189,6 @@ function resetSchedule() {
     $(document).attr("title", "Free");
     $(".text-period").text("School is over!");
     $(".text-schedule").text(scheduleKeys[dayIndex]);
-    $(".progress-timer").hide();
 }
 
 function update() {
