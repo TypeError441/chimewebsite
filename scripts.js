@@ -313,7 +313,7 @@ function triggerSecretAction(code) {
             $(".suspense").show().hide(3000);
         },
         "spring": () => {
-            const n = $("<p class='title'>").text("It's spring break go do something why are you on this website right now what are you doing right now (easter egg ver.)");
+            const n = $("<p class='title'>").text("It's *spring* break go do something why are you on this website right now what are you doing right now (easter egg ver.)");
             n.css("font-family", localStorage.getItem("font"));
             $(".schedule").html(n);
         }
