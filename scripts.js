@@ -197,7 +197,7 @@ function update() {
 }
 
 $(document).ready(function () {
-    $(".version").text(version + "%");
+    $(".version").text(version);
     $(".belldefault").hide();
     const selectedFont = localStorage.getItem("font");
 
