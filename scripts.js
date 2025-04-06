@@ -127,7 +127,8 @@ const schedules = {
         [15, 3, "H"]
     ],
     Weekend: [
-        [22, 3, "Period 7"]]
+        [22, 3, "22:03"]
+    ]
 };
 
 const scheduleKeys = ["Weekend", "Normal", "Tutorial", "Even", "Odd", "Advisory", "Weekend", "Minimum", "Assembly"];
