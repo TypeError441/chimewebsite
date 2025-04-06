@@ -19,7 +19,7 @@ const schedules = {
         [13, 28, "Passing to Period 6"],
         [14, 14, "Period 6"],
         [14, 17, "Passing to Period 7"],
-        [15, 3, "Period 7"]
+        [19, 3, "Period 7"]
     ],
     Tutorial: [
         [8, 25, "Free"],
