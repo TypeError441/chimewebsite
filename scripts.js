@@ -140,7 +140,7 @@ function updateSchedule() {
     const currentMonth = now.getMonth();
     const currentDate = now.getDate();
     console.log(currentMonth, currentDate);
-    if (currentMonth === 3 && currentDate >= 5 && currentDate <= 13) txt = "It's spring break go do something why are you on this website right now what are you doing right now (limited)";
+    if (currentMonth === 3 && currentDate >= 5 && currentDate <= 13) txt = "It's spring break go do something why are you on this website right now what are you doing right now (code spring)";
     else if(currentSchedule.length == 0) txt = "Nothing planned for today :/"
     else txt = "Schedule"
     const n = $("<p class='title'>").text(txt);
