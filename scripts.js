@@ -279,7 +279,7 @@ const secretKeyCodes = [
     ["b", "e", "l", "l"], // Activate Roboto
     ["t", "i", "t", "l", "e"], // Display time in title
     ["p", "r", "o", "g", "r", "e", "s", "s"], // Show progress bar
-    ["c", "p"], // Show pizza
+    ["p", "i", "z", "z", "a"], // Show pizza
     ["s", "u", "s"], // Show suspense...
 ];
 
@@ -318,7 +318,7 @@ function triggerSecretAction(code) {
             localStorage.setItem("progress", localStorage.getItem("progress") === "true" ? "false" : "true");
             $(".progress-timer").toggle();
             break;
-        case "cp":
+        case "pizza":
             $(".pizza").show();
             $(".pizza").hide(3000);
             break;
