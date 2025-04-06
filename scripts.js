@@ -140,7 +140,7 @@ function updateSchedule() {
     const currentMonth = now.getMonth();
     const currentDate = now.getDate();
 
-    if (currentMonth === 3 && currentDate >= 5 && currentDate <= 13) txt = "It's spring break...";
+    if (currentMonth === 3 && currentDate >= 5 && currentDate <= 13) txt = "It's spring break go do something why are you on this website right now what are you doing right now (code spring)";
     else if (!currentSchedule.length) txt = "Nothing planned for today :/";
     
     $("<p class='title'>").text(txt).css("font-family", localStorage.getItem("font")).appendTo($schedule);
@@ -313,7 +313,7 @@ function triggerSecretAction(code) {
             $(".suspense").show().hide(3000);
         },
         "spring": () => {
-            const n = $("<p class='title'>").text("It's spring break...");
+            const n = $("<p class='title'>").text("It's spring break go do something why are you on this website right now what are you doing right now (easter egg ver.)");
             n.css("font-family", localStorage.getItem("font"));
             $(".schedule").html(n);
         }
