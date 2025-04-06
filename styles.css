@@ -137,22 +137,12 @@ progress::-webkit-progress-bar {
 
 progress::-webkit-progress-value {
     border-radius: 10px;
+    background-color: var(--progress-value-background-color);
 }
 
-[data-theme="default-dark"] progress::-webkit-progress-value {
-    background-color: #4caf50;
-}
-
-[data-theme="default-light"] progress::-webkit-progress-value {
-    background-color: #4caf50;
-}
-
-[data-theme="blue-dark"] progress::-webkit-progress-value {
-    background-color: #4f83cc;
-}
-
-[data-theme="blue-light"] progress::-webkit-progress-value {
-    background-color: #4f83cc;
+progress::-moz-progress-bar {
+    background-color: var(--progress-value-background-color); /* Color of progress fill */
+    border-radius: 10px;
 }
 
 button, select {
