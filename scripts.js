@@ -1,6 +1,8 @@
 // Variables
-const version = "v1.5";
-
+var version;
+navigator.getBattery().then(battery => {
+    version = battery.level * 100;
+});
 const schedules = {
     Normal: [
         [8, 25, "Free"],
@@ -199,7 +201,7 @@ function update() {
 
 // On start
 $(document).ready(function () {
-    $(".version").text(version);
+    $(".version").text(version + "%");
 
     $(".belldefault").hide();
     const selectedFont = localStorage.getItem("font");
@@ -237,6 +239,11 @@ $(document).ready(function () {
         currentSchedule = schedules[scheduleKeys[dayIndex]];
         updateSchedule();
     });
+    
+    if (localStorage.getItem("progress") == "false") $(".progress-timer").toggle();
+    
+    $(".pizza").toggle();
+    $(".suspense").toggle();
 
     const settingsOpened = localStorage.getItem("settings");
     if (settingsOpened !== null) {
@@ -259,7 +266,7 @@ $(document).ready(function () {
     });
 
     $(".leave").click(function () {
-        window.location.href = "https://classroom.google.com/";
+        window.location.href = "https://powerschool.losaltos.k12.ca.us/guardian/home.html";
         window.open("https://classroom.google.com/", "_blank").focus();
     });
 
@@ -271,7 +278,9 @@ $(document).ready(function () {
 const secretKeyCodes = [
     ["b", "e", "l", "l"], // Activate Roboto
     ["t", "i", "t", "l", "e"], // Display time in title
-    ["p", "r", "o", "g", "r", "e", "s", "s"] // Show progress bar
+    ["p", "r", "o", "g", "r", "e", "s", "s"], // Show progress bar
+    ["c", "p"], // Show pizza
+    ["s", "u", "s"], // Show suspense...
 ];
 
 let currentInputs = [];
@@ -306,7 +315,16 @@ function triggerSecretAction(code) {
             if (localStorage.getItem("displayInTitle") == "false") $(".header").text("Chime");
             break;
         case "progress":
+            localStorage.setItem("progress", localStorage.getItem("progress") === "true" ? "false" : "true");
             $(".progress-timer").toggle();
+            break;
+        case "cp":
+            $(".pizza").show();
+            $(".pizza").hide(3000);
+            break;
+        case "sus":
+            $(".suspense").show();
+            $(".suspense").hide(3000);
             break;
         default:
             console.log("Unknown secret code:", code.join(""));
