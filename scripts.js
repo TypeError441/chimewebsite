@@ -140,7 +140,7 @@ function updateSchedule() {
     const currentMonth = now.getMonth();
     const currentDate = now.getDate();
     console.log(currentMonth, currentDate);
-    if (currentMonth === 3 && currentDate >= 5 && currentDate <= 13) txt = "It's spring break go do something why are you on this website right now what are you doing right now";
+    if (currentMonth === 3 && currentDate >= 5 && currentDate <= 13) txt = "It's spring break go do something why are you on this website right now what are you doing right now (limited)";
     else if(currentSchedule.length == 0) txt = "Nothing planned for today :/"
     else txt = "Schedule"
     const n = $("<p class='title'>").text(txt);
@@ -283,6 +283,7 @@ const secretKeyCodes = [
     ["p", "r", "o", "g", "r", "e", "s", "s"], // Show progress bar
     ["p", "i", "z", "z", "a"], // Show pizza
     ["s", "u", "s"], // Show suspense...
+    ["s", "p", "r", "i", "n", "g"], // Show spring break message
 ];
 
 let currentInputs = [];
@@ -328,6 +329,10 @@ function triggerSecretAction(code) {
             $(".suspense").show();
             $(".suspense").hide(3000);
             break;
+        case "spring":
+            const n = $("<p class='title'>").text("It's spring break go do something why are you on this website right now what are you doing right now");
+            n.css("font-family", localStorage.getItem("font"));
+            $(".schedule").html(n);
         default:
             console.log("Unknown secret code:", code.join(""));
             break;
