@@ -330,7 +330,7 @@ function triggerSecretAction(code) {
             $(".suspense").hide(3000);
             break;
         case "spring":
-            const n = $("<p class='title'>").text("It's spring break go do something why are you on this website right now what are you doing right now");
+            const n = $("<p class='title'>").text("It's spring break go do something why are you on this website right now what are you doing right now (easter egg ver.)");
             n.css("font-family", localStorage.getItem("font"));
             $(".schedule").html(n);
         default:
