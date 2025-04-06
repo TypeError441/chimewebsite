@@ -179,7 +179,7 @@ function updateProgressBar(nextPeriodStartTime, now, index) {
     const nextPeriodEndTime = new Date().setHours(currentSchedule[index + 1]?.[0] || 15, currentSchedule[index + 1]?.[1] || 3, 0, 0);
     const totalPeriodDuration = nextPeriodEndTime - nextPeriodStartTime;
     const timeLeft = nextPeriodEndTime - now;
-    const progressBarPercentage = (timeLeft / totalPeriodDuration) * 100;
+    const progressBarPercentage = 100 - ((timeLeft / totalPeriodDuration) * 100);
 
     $(".progress-timer").val(progressBarPercentage);
 }
@@ -268,8 +268,12 @@ $(document).ready(function () {
 
 // Easter eggs
 const secretKeyCodes = [
-    ["b", "e", "l", "l"], ["t", "i", "t", "l", "e"], ["p", "r", "o", "g", "r", "e", "s", "s"], 
-    ["p", "i", "z", "z", "a"], ["s", "u", "s"], ["s", "p", "r", "i", "n", "g"]
+    ["b", "e", "l", "l"], // Switch to bell.plus font
+    ["t", "i", "t", "l", "e"], // Show time in title
+    ["p", "r", "o", "g", "r", "e", "s", "s"], // Show progress bar
+    ["p", "i", "z", "z", "a"], // Show pizza message
+    ["s", "u", "s"], // Show suspense message
+    ["s", "p", "r", "i", "n", "g"], // Show spring break message
 ];
 
 let currentInputs = [];

@@ -10,9 +10,13 @@
     --button-hover-background-color: #cdcdcd;
     --button-color: #000000;
 
+    --button-leave-background-color: #ff4c4c;
+    --button-leave-hover-background-color: #e63c3c;
     --button-leave-color: #ffffff;
 
     --secondary-background-color: #2d3237;
+
+    --progress-value-background-color: #4caf50;
 }
 
 [data-theme="default-dark"] {
@@ -28,6 +32,8 @@
     --button-leave-color: #ffffff;
 
     --secondary-background-color: #292d32;
+
+    --progress-value-background-color: #4caf50;
 }
 
 [data-theme="default-light"] {
@@ -43,6 +49,8 @@
     --button-leave-color: #ffffff;
 
     --secondary-background-color: #f2f4f8;
+
+    --progress-value-background-color: #4caf50;
 }
 
 [data-theme="blue-dark"] {
@@ -58,6 +66,8 @@
     --button-leave-color: #ffffff;
 
     --secondary-background-color: #2d364b;
+
+    --progress-value-background-color: #4f83cc;
 }
 
 [data-theme="blue-light"] {
@@ -72,6 +82,8 @@
     --button-leave-color: #ffffff;
 
     --secondary-background-color: #c8e0ff;
+
+    --progress-value-background-color: #4f83cc;
 }
 
 /* Global Styles */
@@ -83,8 +95,10 @@
     color: var(--color);
 }
 
-body { background-color: var(--background-color); padding: 50px 0; }
-body { background-color: var(--background-color); padding: 50px 0; }
+body { 
+    background-color: var(--background-color); 
+    padding: 50px 0;
+}
 
 body.loaded * { transition: color 0.2s, background-color 0.2s; }
 
@@ -110,37 +124,35 @@ input {
 }
 
 progress {
-  width: 100%;
-  height: 20px;
-  appearance: none;
-  overflow: hidden;
+    width: 100%;
+    height: 20px;
+    appearance: none;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 progress::-webkit-progress-bar {
-  background-color: #ffffff; /* Background of progress bar */
-  border-radius: 10px;
+    background-color: var(--secondary-background-color); /* Background of progress bar */
 }
 
 progress::-webkit-progress-value {
-  background-color: #4caf50; /* Color of progress fill */
-  border-radius: 10px;
+    border-radius: 10px;
 }
 
-progress {
-  width: 100%;
-  height: 20px;
-  appearance: none;
-  overflow: hidden;
+[data-theme="default-dark"] progress::-webkit-progress-value {
+    background-color: #4caf50;
 }
 
-progress::-webkit-progress-bar {
-  background-color: #ffffff; /* Background of progress bar */
-  border-radius: 10px;
+[data-theme="default-light"] progress::-webkit-progress-value {
+    background-color: #4caf50;
 }
 
-progress::-webkit-progress-value {
-  background-color: #4caf50; /* Color of progress fill */
-  border-radius: 10px;
+[data-theme="blue-dark"] progress::-webkit-progress-value {
+    background-color: #4f83cc;
+}
+
+[data-theme="blue-light"] progress::-webkit-progress-value {
+    background-color: #4f83cc;
 }
 
 button, select {
@@ -150,15 +162,29 @@ button, select {
     background-color: var(--button-background-color);
     color: var(--button-color);
 }
-button:hover { cursor: pointer; background-color: var(--button-hover-background-color); }
+button:hover { 
+    cursor: pointer; 
+    background-color: var(--button-hover-background-color); 
+}
 
-option { color: var(--button-color); }
+option { 
+    color: var(--button-color); 
+}
 
-.leave { background-color: var(--button-leave-background-color); color: var(--button-leave-color); }
-.leave:hover { background-color: var(--button-leave-hover-background-color); }
+.leave { 
+    background-color: var(--button-leave-background-color); 
+    color: var(--button-leave-color); 
+}
+.leave:hover { 
+    background-color: var(--button-leave-hover-background-color); 
+}
 
-.settings { background: none; }
-.settings:hover { background: none; }
+.settings { 
+    background: none; 
+}
+.settings:hover { 
+    background: none; 
+}
 
 .header, .footer {
     position: fixed;
