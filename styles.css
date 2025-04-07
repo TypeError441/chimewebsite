@@ -127,8 +127,8 @@
 }
 
 [data-theme="ocean"] {
-    --background-color: #2e8b57;
-    --background-image: none;
+    --background-color: none;
+    --background-image: linear-gradient(to bottom, #2e8b57, #006d2c);
     --color: #ffffff;
 
     --button-background-color: #4682b4;
@@ -145,8 +145,8 @@
 }
 
 [data-theme="sunset"] {
-    --background-color: #ff6347;
-    --background-image: none;
+    --background-color: none;
+    --background-image: linear-gradient(to bottom, #ff6347, #ff4500);
     --color: #ffffff;
 
     --button-background-color: #ff4500;
@@ -164,15 +164,15 @@
 
 [data-theme="space"] {
     --background-color: #000000;
-    --background-image: url("https://external-preview.redd.it/X8sbOfKSqHJQmKt6wuzGGtCrV2ADHcgRNn3RWDFMfOQ.jpg?auto=webp&s=36936660b169ae53609b55c026b058ab1b22f2d7");
+    --background-image: url("https://images.pond5.com/black-empty-space-stars-dark-footage-073036484_iconl.jpeg");
     --color: #ffffff;
 
-    --button-background-color: #4b0082; /* Indigo */
-    --button-hover-background-color: #800080; /* Purple */
+    --button-background-color: #1f0432; /* Indigo */
+    --button-hover-background-color: #2e0a2e; /* Purple */
     --button-color: #ffffff;
 
-    --button-leave-background-color: #ff1493; /* Deep Pink */
-    --button-leave-hover-background-color: #e60073;
+    --button-leave-background-color: #581313; /* Deep Pink */
+    --button-leave-hover-background-color: #3f0d0d;
     --button-leave-color: #ffffff;
 
     --secondary-background-color: #000000; /* Space Black */
@@ -191,6 +191,11 @@
 
 body { 
     background-color: var(--background-color); 
+    background-image: var(--background-image);
+    background-attachment: fixed;
+    background-repeat: repeat;
+    background-position: center;
+
     padding: 50px 0;
 }
 
@@ -218,7 +223,7 @@ input {
 }
 
 progress {
-    width: 100%;
+    width: 80%;
     height: 20px;
     appearance: none;
     overflow: hidden;
