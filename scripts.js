@@ -195,6 +195,7 @@ function resetSchedule() {
     $(".text-period").text("School is over!");
     $(".text-schedule").text(scheduleKeys[dayIndex]);
     $(".progress-timer").hide();
+    $(".header").text("Chime");
 }
 
 function update() {
