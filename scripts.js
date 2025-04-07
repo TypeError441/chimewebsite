@@ -133,7 +133,7 @@ const schedules = {
     ],
 };
 
-const scheduleKeys = ["Weekend", "Normal", "Tutorial", "Even", "Odd", "Advisory", "Weekend", "Minimum", "Assembly"];
+const scheduleKeys = ["Weekend", "Normal", "Tutorial", "Even", "Odd", "Advisory", "Weekend", "Minimum", "Assembly", "22:03"];
 let dayIndex = new Date().getDay();
 let currentSchedule = schedules[scheduleKeys[dayIndex]];
 
