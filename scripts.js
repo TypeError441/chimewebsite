@@ -1,5 +1,5 @@
 // Variables
-var version = "v1.7";
+var version = "v1.8";
 
 const schedules = {
     "Normal": [
@@ -133,7 +133,7 @@ const schedules = {
     ],
 };
 
-const scheduleKeys = ["Weekend", "Normal", "Tutorial", "Even", "Odd", "Advisory", "Weekend", "Minimum", "Assembly", "22:03"];
+const scheduleKeys = ["Weekend", "Normal", "Tutorial", "Even", "Odd", "Advisory", "Weekend", "Minimum", "Assembly", "???"];
 let dayIndex = new Date().getDay();
 let currentSchedule = schedules[scheduleKeys[dayIndex]];
 
