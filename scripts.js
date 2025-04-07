@@ -170,7 +170,7 @@ function updateSchedule() {
             $(document).attr("title", `${timeRemaining} | ${text}`);
             $(".text-period").text(text);
             $(".text-schedule").text(scheduleKeys[dayIndex]);
-            $(".progress-timer").show();
+            if (localStorage.getItem("progress") === "true") $(".progress-timer").show();
 
             foundNextPeriod = true;
             break;
