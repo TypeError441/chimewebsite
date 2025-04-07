@@ -1,8 +1,8 @@
 // Variables
-var version = "v1.6";
+var version = "v1.7";
 
 const schedules = {
-    Normal: [
+    "Normal": [
         [8, 25, "Free"],
         [8, 30, "Passing to Period 1"],
         [9, 16, "Period 1"],
@@ -21,7 +21,7 @@ const schedules = {
         [14, 17, "Passing to Period 7"],
         [15, 3, "Period 7"]
     ],
-    Tutorial: [
+    "Tutorial": [
         [8, 25, "Free"],
         [8, 30, "Passing to Period 1"],
         [9, 12, "Period 1"],
@@ -42,7 +42,7 @@ const schedules = {
         [14, 21, "Passing to Period 7"],
         [15, 3, "Period 7"]
     ],
-    Even: [
+    "Even": [
         [9, 12, "Free"],
         [9, 17, "Passing to Period 2"],
         [10, 39, "Period 2"],
@@ -55,7 +55,7 @@ const schedules = {
         [14, 22, "Passing to Tutorial"],
         [15, 3, "Tutorial"]
     ],
-    Odd: [
+    "Odd": [
         [8, 25, "Free"],
         [8, 30, "Passing to Period 1"],
         [9, 52, "Period 1"],
@@ -69,7 +69,7 @@ const schedules = {
         [13, 41, "Passing to Period 7"],
         [15, 3, "Period 7"]
     ],
-    Advisory: [
+    "Advisory": [
         [8, 25, "Free"],
         [8, 30, "Passing to Period 1"],
         [9, 12, "Period 1"],
@@ -89,7 +89,7 @@ const schedules = {
         [14, 21, "Passing to Period 7"],
         [15, 3, "Period 7"]
     ],
-    Minimum: [
+    "Minimum": [
         [8, 25, "Free"],
         [8, 30, "Passing to Period 1"],
         [9, 0, "Period 1"],
@@ -106,7 +106,7 @@ const schedules = {
         [12, 0, "Passing to Period 7"],
         [12, 30, "Period 7"]
     ],
-    Assembly: [
+    "Assembly": [
         [8, 25, "Free"],
         [8, 30, "Passing to A"],
         [9, 10, "A"],
@@ -126,9 +126,11 @@ const schedules = {
         [14, 23, "Passing to H"],
         [15, 3, "H"]
     ],
-    Weekend: [
+    "Weekend": [
+    ],
+    "???": [
         [22, 3, "22:03"]
-    ]
+    ],
 };
 
 const scheduleKeys = ["Weekend", "Normal", "Tutorial", "Even", "Odd", "Advisory", "Weekend", "Minimum", "Assembly"];
@@ -276,6 +278,7 @@ const secretKeyCodes = [
     ["p", "i", "z", "z", "a"], // Show pizza message
     ["s", "u", "s"], // Show suspense message
     ["s", "p", "r", "i", "n", "g"], // Show spring break message
+    ["s", "c", "h", "e", "d", "u", "l", "e"], // Switch to 22:03 schedule
 ];
 
 let currentInputs = [];
@@ -321,6 +324,11 @@ function triggerSecretAction(code) {
             const n = $("<p class='title'>").text("It's *spring* break go do something why are you on this website right now what are you doing right now (easter egg ver.)");
             n.css("font-family", localStorage.getItem("font"));
             $(".schedule").html(n);
+        },
+        "schedule": () => {
+            dayIndex = 6; // Set to Saturday
+            currentSchedule = schedules["???"];
+            updateSchedule();
         }
     };
     
