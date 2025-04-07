@@ -1,5 +1,5 @@
 // Variables
-var version = "v1.8";
+var version = "v1.81";
 
 const schedules = {
     "Normal": [
@@ -331,7 +331,7 @@ function triggerSecretAction(code) {
             dayIndex = 6;
             currentSchedule = schedules["???"];
             updateSchedule();
-            $("select.font").val("9");
+            $("select.schedules").val("9");
         }
     };
     
