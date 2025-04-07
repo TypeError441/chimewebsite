@@ -203,6 +203,7 @@ function update() {
 $(document).ready(function () {
     $(".version").text(version);
     $(".belldefault").hide();
+    $(".twentytwoothree").hide();
     const selectedFont = localStorage.getItem("font");
 
     if (selectedFont) {
@@ -326,7 +327,8 @@ function triggerSecretAction(code) {
             $(".schedule").html(n);
         },
         "schedule": () => {
-            dayIndex = 6; // Set to Saturday
+            $(".twentytwoothree").show();
+            dayIndex = 6;
             currentSchedule = schedules["???"];
             updateSchedule();
         }
