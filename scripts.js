@@ -1,5 +1,5 @@
 // Variables
-var version = "v1.83";
+var version = "v1.9";
 
 const schedules = {
     "Normal": [
@@ -170,6 +170,7 @@ function updateSchedule() {
             $(document).attr("title", `${timeRemaining} | ${text}`);
             $(".text-period").text(text);
             $(".text-schedule").text(scheduleKeys[dayIndex]);
+            $(".progress-timer").show();
 
             foundNextPeriod = true;
             break;
@@ -180,7 +181,6 @@ function updateSchedule() {
 }
 
 function updateProgressBar(nextPeriodStartTime, now, index) {
-
     const nextPeriodEndTime = new Date().setHours(currentSchedule[index + 1]?.[0] || 15, currentSchedule[index + 1]?.[1] || 3, 0, 0);
     const totalPeriodDuration = nextPeriodEndTime - nextPeriodStartTime;
     const timeLeft = nextPeriodEndTime - now;
