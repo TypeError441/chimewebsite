@@ -21,6 +21,7 @@
 
 [data-theme="default-dark"] {
     --background-color: #1e1e1e;
+    --background-image: none;
     --color: #f5f5f5;
 
     --button-background-color: #3a3f44;
@@ -38,6 +39,7 @@
 
 [data-theme="default-light"] {
     --background-color: #f9f9f9;
+    --background-image: none;
     --color: #202124;
 
     --button-background-color: #d2dadc;
@@ -55,6 +57,7 @@
 
 [data-theme="blue-dark"] {
     --background-color: #1a1d26;
+    --background-image: none;
     --color: #e0e7ff;
 
     --button-background-color: #4c5c7f;
@@ -72,6 +75,7 @@
 
 [data-theme="blue-light"] {
     --background-color: #e0f1ff;
+    --background-image: none;
     --color: #1a1d26;
 
     --button-background-color: #c1d9ff;
@@ -87,7 +91,8 @@
 }
 
 [data-theme="coffee"] {
-    --background-color: #3e2a47;
+    --background-color: #47372a;
+    --background-image: none;
     --color: #f5e1a4;
 
     --button-background-color: #d1a56d;
@@ -105,14 +110,15 @@
 
 [data-theme="code"] {
     --background-color: #1e1e1e;
+    --background-image: none;
     --color: #00ff00;
 
     --button-background-color: #333333;
     --button-hover-background-color: #4d4d4d;
     --button-color: #00ff00;
 
-    --button-leave-background-color: #ff5733;
-    --button-leave-hover-background-color: #ff2a00;
+    --button-leave-background-color: #ff4c4c;
+    --button-leave-hover-background-color: #e63c3c;
     --button-leave-color: #ffffff;
 
     --secondary-background-color: #2c2c2c;
@@ -120,25 +126,9 @@
     --progress-value-background-color: #33ff33;
 }
 
-[data-theme="rainbow"] {
-    --background-color: #ffffff;
-    --color: #333333;
-
-    --button-background-color: #ff6347; /* Tomato */
-    --button-hover-background-color: #ff4500;
-    --button-color: #ffffff;
-
-    --button-leave-background-color: #ff1493; /* Deep Pink */
-    --button-leave-hover-background-color: #e60073;
-    --button-leave-color: #ffffff;
-
-    --secondary-background-color: #f0e68c; /* Khaki */
-
-    --progress-value-background-color: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-}
-
 [data-theme="ocean"] {
     --background-color: #2e8b57;
+    --background-image: none;
     --color: #ffffff;
 
     --button-background-color: #4682b4;
@@ -156,6 +146,7 @@
 
 [data-theme="sunset"] {
     --background-color: #ff6347;
+    --background-image: none;
     --color: #ffffff;
 
     --button-background-color: #ff4500;
@@ -172,7 +163,8 @@
 }
 
 [data-theme="space"] {
-    --background-color: #2f4f4f;
+    --background-color: #000000;
+    --background-image: url("https://external-preview.redd.it/X8sbOfKSqHJQmKt6wuzGGtCrV2ADHcgRNn3RWDFMfOQ.jpg?auto=webp&s=36936660b169ae53609b55c026b058ab1b22f2d7");
     --color: #ffffff;
 
     --button-background-color: #4b0082; /* Indigo */
@@ -186,23 +178,6 @@
     --secondary-background-color: #000000; /* Space Black */
 
     --progress-value-background-color: #c0c0c0; /* Silver */
-}
-
-[data-theme="neon"] {
-    --background-color: #111111;
-    --color: #ff00ff;
-
-    --button-background-color: #00ff00;
-    --button-hover-background-color: #00cc00;
-    --button-color: #ffffff;
-
-    --button-leave-background-color: #ff0000;
-    --button-leave-hover-background-color: #cc0000;
-    --button-leave-color: #ffffff;
-
-    --secondary-background-color: #6600cc;
-
-    --progress-value-background-color: #ff00ff;
 }
 
 /* Global Styles */
