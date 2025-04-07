@@ -1,5 +1,5 @@
 // Variables
-var version = "v1.82";
+var version = "v1.83";
 
 const schedules = {
     "Normal": [
@@ -180,10 +180,6 @@ function updateSchedule() {
 }
 
 function updateProgressBar(nextPeriodStartTime, now, index) {
-    if (!currentSchedule.length) {
-        $(".progress-timer").hide();
-        return;
-    }
 
     const nextPeriodEndTime = new Date().setHours(currentSchedule[index + 1]?.[0] || 15, currentSchedule[index + 1]?.[1] || 3, 0, 0);
     const totalPeriodDuration = nextPeriodEndTime - nextPeriodStartTime;
@@ -198,6 +194,7 @@ function resetSchedule() {
     $(document).attr("title", "Free");
     $(".text-period").text("School is over!");
     $(".text-schedule").text(scheduleKeys[dayIndex]);
+    $(".progress-timer").hide();
 }
 
 function update() {
