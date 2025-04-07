@@ -30,6 +30,13 @@
                         <option value="default-light">Default (light)</option>
                         <option value="blue-dark">Blue (dark)</option>
                         <option value="blue-light">Blue (light)</option>
+                        <option value="coffee">Coffee</option>
+                        <option value="code">Code</option>
+                        <option value="rainbow">Rainbow</option>
+                        <option value="ocean">Ocean</option>
+                        <option value="sunset">Sunset</option>
+                        <option value="space">space</option>
+                        <option value="neon">Neon</option>
                     </select>
                     <select name="Font" class="font">
                         <option value="'Arial', sans-serif">Arial</option>
@@ -48,22 +55,19 @@
             </section>
         
             <section class="content">
-                <span>
-                    <section class="period">
-                        <p class="oversized text-timer"></p>
-                        <p class="title text-period"></p>
-                        <p class="title text-schedule"></p>
-                    </section>
-                    <progress class="progress-timer" value="0" max="100"></progress>
-                    <section class="schedule">
-                        <p class="title">Schedule</p>
-                    </section>
-                </span>
-                
-                <span style="float: right;">
-                    <button class="leave">Panic</button>
-                    <button class="settings">▲</button>
-                </span>
+                <section class="period">
+                    <span class="oversized text-timer"></span>
+                    <span style="float: right;">
+                        <button class="leave">Panic</button>
+                        <button class="settings">▲</button>
+                    </span>
+                    <p class="title text-period"></p>
+                    <p class="title text-schedule"></p>
+                </section>
+                <progress class="progress-timer" value="0" max="100"></progress>
+                <section class="schedule">
+                    <p class="title">Schedule</p>
+                </section>
             </section>
         </div>
         <img class="pizza" src="src/image/cheese_pizza.png" 

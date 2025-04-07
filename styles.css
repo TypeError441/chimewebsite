@@ -86,6 +86,125 @@
     --progress-value-background-color: #4f83cc;
 }
 
+[data-theme="coffee"] {
+    --background-color: #3e2a47;
+    --color: #f5e1a4;
+
+    --button-background-color: #d1a56d;
+    --button-hover-background-color: #a67c39;
+    --button-color: #ffffff;
+
+    --button-leave-background-color: #e76f51;
+    --button-leave-hover-background-color: #f4a261;
+    --button-leave-color: #ffffff;
+
+    --secondary-background-color: #4a2c2a;
+
+    --progress-value-background-color: #9a703d;
+}
+
+[data-theme="code"] {
+    --background-color: #1e1e1e;
+    --color: #00ff00;
+
+    --button-background-color: #333333;
+    --button-hover-background-color: #4d4d4d;
+    --button-color: #00ff00;
+
+    --button-leave-background-color: #ff5733;
+    --button-leave-hover-background-color: #ff2a00;
+    --button-leave-color: #ffffff;
+
+    --secondary-background-color: #2c2c2c;
+
+    --progress-value-background-color: #33ff33;
+}
+
+[data-theme="rainbow"] {
+    --background-color: #ffffff;
+    --color: #333333;
+
+    --button-background-color: #ff6347; /* Tomato */
+    --button-hover-background-color: #ff4500;
+    --button-color: #ffffff;
+
+    --button-leave-background-color: #ff1493; /* Deep Pink */
+    --button-leave-hover-background-color: #e60073;
+    --button-leave-color: #ffffff;
+
+    --secondary-background-color: #f0e68c; /* Khaki */
+
+    --progress-value-background-color: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+}
+
+[data-theme="ocean"] {
+    --background-color: #2e8b57;
+    --color: #ffffff;
+
+    --button-background-color: #4682b4;
+    --button-hover-background-color: #5f9ea0;
+    --button-color: #ffffff;
+
+    --button-leave-background-color: #ff4500;
+    --button-leave-hover-background-color: #e60000;
+    --button-leave-color: #ffffff;
+
+    --secondary-background-color: #20b2aa;
+
+    --progress-value-background-color: #3cb371;
+}
+
+[data-theme="sunset"] {
+    --background-color: #ff6347;
+    --color: #ffffff;
+
+    --button-background-color: #ff4500;
+    --button-hover-background-color: #e03e00;
+    --button-color: #ffffff;
+
+    --button-leave-background-color: #8a2be2;
+    --button-leave-hover-background-color: #7a1bb3;
+    --button-leave-color: #ffffff;
+
+    --secondary-background-color: #ff8c00;
+
+    --progress-value-background-color: #ff1493;
+}
+
+[data-theme="space"] {
+    --background-color: #2f4f4f;
+    --color: #ffffff;
+
+    --button-background-color: #4b0082; /* Indigo */
+    --button-hover-background-color: #800080; /* Purple */
+    --button-color: #ffffff;
+
+    --button-leave-background-color: #ff1493; /* Deep Pink */
+    --button-leave-hover-background-color: #e60073;
+    --button-leave-color: #ffffff;
+
+    --secondary-background-color: #000000; /* Space Black */
+
+    --progress-value-background-color: #c0c0c0; /* Silver */
+}
+
+[data-theme="neon"] {
+    --background-color: #111111;
+    --color: #ff00ff;
+
+    --button-background-color: #00ff00;
+    --button-hover-background-color: #00cc00;
+    --button-color: #ffffff;
+
+    --button-leave-background-color: #ff0000;
+    --button-leave-hover-background-color: #cc0000;
+    --button-leave-color: #ffffff;
+
+    --secondary-background-color: #6600cc;
+
+    --progress-value-background-color: #ff00ff;
+}
+
 /* Global Styles */
 * {
     margin: 0;
