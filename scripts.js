@@ -180,6 +180,11 @@ function updateSchedule() {
 }
 
 function updateProgressBar(nextPeriodStartTime, now, index) {
+    if (!currentSchedule.length) {
+        $(".progress-timer").hide();
+        return;
+    }
+
     const nextPeriodEndTime = new Date().setHours(currentSchedule[index + 1]?.[0] || 15, currentSchedule[index + 1]?.[1] || 3, 0, 0);
     const totalPeriodDuration = nextPeriodEndTime - nextPeriodStartTime;
     const timeLeft = nextPeriodEndTime - now;
