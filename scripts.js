@@ -1,5 +1,5 @@
 // Variables
-var version = "v1.81";
+var version = "v1.82";
 
 const schedules = {
     "Normal": [
