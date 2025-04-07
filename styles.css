@@ -132,7 +132,7 @@ progress {
 }
 
 progress::-webkit-progress-bar {
-    background-color: var(--secondary-background-color); /* Background of progress bar */
+    background-color: var(--secondary-background-color);
 }
 
 progress::-webkit-progress-value {
@@ -141,7 +141,7 @@ progress::-webkit-progress-value {
 }
 
 progress::-moz-progress-bar {
-    background-color: var(--progress-value-background-color); /* Color of progress fill */
+    background-color: var(--progress-value-background-color);
     border-radius: 10px;
 }
 
