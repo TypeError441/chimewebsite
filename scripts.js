@@ -1,5 +1,5 @@
 // Variables
-var version = "v2!";
+var version = "v2";
 
 const schedules = {
     "Normal": [
@@ -277,7 +277,6 @@ $(document).ready(function () {
 const secretKeyCodes = [
     ["b", "e", "l", "l"], // Switch to bell.plus font
     ["t", "i", "t", "l", "e"], // Show time in title
-    ["p", "r", "o", "g", "r", "e", "s", "s"], // Show progress bar
     ["p", "i", "z", "z", "a"], // Show pizza message
     ["s", "u", "s"], // Show suspense message
     ["s", "p", "r", "i", "n", "g"], // Show spring break message
@@ -312,10 +311,6 @@ function triggerSecretAction(code) {
         "title": () => {
             localStorage.setItem("displayInTitle", localStorage.getItem("displayInTitle") === "true" ? "false" : "true");
             if (localStorage.getItem("displayInTitle") === "false") $(".header").text("Chime");
-        },
-        "progress": () => {
-            localStorage.setItem("progress", localStorage.getItem("progress") === "true" ? "false" : "true");
-            $(".progress-timer").toggle();
         },
         "pizza": () => {
             $(".pizza").show().hide(3000);
