@@ -377,6 +377,7 @@ const secretKeyCodes = [
     ["s", "u", "s"], // Show suspense message
     ["s", "p", "r", "i", "n", "g"], // Show spring break message
     ["s", "c", "h", "e", "d", "u", "l", "e"], // Switch to 22:03 schedule
+    ["c", "a", "a", "s", "p", "p"], // Show CAASPP message
 ];
 
 let currentInputs = [];
@@ -425,6 +426,9 @@ function triggerSecretAction(code) {
             currentSchedule = schedules["???"];
             updateSchedule();
             $("select.schedules").val("9");
+        },
+        "caaspp": () => {
+            $(".caasppreminder").show();
         }
     };
     
