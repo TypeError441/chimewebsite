@@ -1,5 +1,5 @@
 // Variables
-var version = "v2";
+var version = "version CAASPP";
 
 const schedules = {
     "Normal": [
@@ -131,7 +131,7 @@ const schedules = {
     "???": [
         [22, 3, "22:03"]
     ],
-    "8thCAT": [
+    "8th CAST": [
         [8, 25, "Free"],
         [8, 30, "Passing to Period 1"],
         [9, 16, "Period 1"],
@@ -150,7 +150,7 @@ const schedules = {
         [14, 17, "Passing to Period 7"],
         [15, 3, "Period 7"]
     ],
-    "EnglishCAT": [
+    "English CAT": [
         [9, 12, "Free"],
         [9, 17, "Passing to Period 2"],
         [10, 17, "Period 2"],
@@ -165,7 +165,7 @@ const schedules = {
         [14, 19, "Passing to Extended Tutorial"],
         [15, 3, "Extended Tutorial"]
     ],
-    "EnglishPer": [
+    "English Performance Task": [
         [8, 25, "Free"],
         [8, 30, "Passing to Period 1"],
         [9, 20, "Period 1"],
@@ -180,7 +180,7 @@ const schedules = {
         [14, 13, "Passing to Period 7"],
         [15, 3, "Period 7"]
     ],
-    "MathCAT": [
+    "Math CAT": [
         [9, 12, "Free"],
         [9, 17, "Passing to Period 2"],
         [10, 7, "Period 2"],
@@ -195,7 +195,7 @@ const schedules = {
         [14, 4, "Passing to Extended Tutorial"],
         [15, 3, "Extended Tutorial"]
     ],
-    "MathPer": [
+    "Math Performance Task": [
         [8, 25, "Free"],
         [8, 30, "Passing to Period 1"],
         [9, 30, "Period 1"],
@@ -212,7 +212,7 @@ const schedules = {
     ],
 };
 
-const scheduleKeys = ["Weekend", "Normal", "Tutorial", "Even", "Odd", "Advisory", "Weekend", "Minimum", "Assembly", "???", "8th CAT", "English CAT", "English Performance Test", "Math CAT", "Math Performance Test"];
+const scheduleKeys = ["Weekend", "Normal", "Tutorial", "Even", "Odd", "Advisory", "Weekend", "Minimum", "Assembly", "???", "8th CAST", "English CAT", "English Performance Task", "Math CAT", "Math Performance Task"];
 let dayIndex = new Date().getDay();
 let currentSchedule = schedules[scheduleKeys[dayIndex]];
 
