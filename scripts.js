@@ -234,6 +234,7 @@ function updateSchedule() {
     let txt = "Schedule";
 
     if (!currentSchedule.length) txt = "Nothing planned for today :/";
+    if (!currentSchedule.length) txt = "Nothing planned for today :/";
     
     $("<p class='title'>").text(txt).css("font-family", localStorage.getItem("font")).appendTo($schedule);
     for (let i = 0; i < currentSchedule.length; i++) {
