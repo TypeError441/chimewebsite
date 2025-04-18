@@ -222,28 +222,6 @@ input {
     padding: 1em;
 }
 
-progress {
-    width: 80%;
-    height: 20px;
-    appearance: none;
-    overflow: hidden;
-    border-radius: 10px;
-}
-
-progress::-webkit-progress-bar {
-    background-color: var(--secondary-background-color);
-}
-
-progress::-webkit-progress-value {
-    border-radius: 10px;
-    background-color: var(--progress-value-background-color);
-}
-
-progress::-moz-progress-bar {
-    background-color: var(--progress-value-background-color);
-    border-radius: 10px;
-}
-
 button, select {
     padding: 1em;
     border: none;

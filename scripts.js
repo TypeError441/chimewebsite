@@ -1,5 +1,5 @@
 // Variables
-var version = "v2!";
+var version = "v2";
 
 const schedules = {
     "Normal": [
@@ -131,23 +131,117 @@ const schedules = {
     "???": [
         [22, 3, "22:03"]
     ],
+    "8thCAT": [
+        [8, 25, "Free"],
+        [8, 30, "Passing to Period 1"],
+        [9, 16, "Period 1"],
+        [9, 19, "Passing to Period 2"],
+        [10, 5, "Period 2"],
+        [10, 8, "Passing to Period 3"],
+        [10, 57, "Period 3"],
+        [11, 11, "Brunch"],
+        [11, 14, "Passing to Period 4"],
+        [12, 0, "Period 4"],
+        [12, 3, "Passing to Period 5"],
+        [12, 49, "Period 5"],
+        [13, 25, "Lunch"],
+        [13, 28, "Passing to Period 6"],
+        [14, 14, "Period 6"],
+        [14, 17, "Passing to Period 7"],
+        [15, 3, "Period 7"]
+    ],
+    "EnglishCAT": [
+        [9, 12, "Free"],
+        [9, 17, "Passing to Period 2"],
+        [10, 17, "Period 2"],
+        [10, 31, "Brunch"],
+        [10, 34, "Passing to Advisory (English CAT)"],
+        [11, 34, "English CAT"],
+        [11, 37, "Passing to Period 4"],
+        [12, 37, "Period 4"],
+        [13, 13, "Lunch"],
+        [13, 16, "Passing to Period 6"],
+        [14, 16, "Period 6"],
+        [14, 19, "Passing to Extended Tutorial"],
+        [15, 3, "Extended Tutorial"]
+    ],
+    "EnglishPer": [
+        [8, 25, "Free"],
+        [8, 30, "Passing to Period 1"],
+        [9, 20, "Period 1"],
+        [9, 23, "Passing to Period 3"],
+        [10, 13, "Period 3"],
+        [10, 27, "Brunch"],
+        [10, 30, "Passing to Advisory (English Performance Task)"],
+        [12, 40, "English Performance Task"],
+        [13, 17, "Lunch"],
+        [13, 20, "Passing to Period 5"],
+        [14, 10, "Period 5"],
+        [14, 13, "Passing to Period 7"],
+        [15, 3, "Period 7"]
+    ],
+    "MathCAT": [
+        [9, 12, "Free"],
+        [9, 17, "Passing to Period 2"],
+        [10, 7, "Period 2"],
+        [10, 21, "Brunch"],
+        [10, 24, "Passing to Advisory (Math CAT)"],
+        [11, 39, "Math CAT"],
+        [11, 42, "Passing to Period 4"],
+        [12, 32, "Period 4"],
+        [13, 8, "Lunch"],
+        [13, 11, "Passing to Period 6"],
+        [14, 1, "Period 6"],
+        [14, 4, "Passing to Extended Tutorial"],
+        [15, 3, "Extended Tutorial"]
+    ],
+    "MathPer": [
+        [8, 25, "Free"],
+        [8, 30, "Passing to Period 1"],
+        [9, 30, "Period 1"],
+        [9, 33, "Passing to Period 3"],
+        [10, 40, "Period 3"],
+        [10, 54, "Brunch"],
+        [10, 57, "Passing to Advisory (Math Performance Task)"],
+        [12, 17, "Math Performance Task"],
+        [12, 53, "Lunch"],
+        [12, 59, "Passing to Period 5"],
+        [13, 59, "Period 5"],
+        [14, 2, "Passing to Period 7"],
+        [15, 3, "Period 7"]
+    ],
 };
 
-const scheduleKeys = ["Weekend", "Normal", "Tutorial", "Even", "Odd", "Advisory", "Weekend", "Minimum", "Assembly", "???"];
+const scheduleKeys = ["Weekend", "Normal", "Tutorial", "Even", "Odd", "Advisory", "Weekend", "Minimum", "Assembly", "???", "8th CAT", "English CAT", "English Performance Test", "Math CAT", "Math Performance Test"];
 let dayIndex = new Date().getDay();
 let currentSchedule = schedules[scheduleKeys[dayIndex]];
+
+const overrideSchedules = {
+    "04-21": "8thCAT",
+    "04-22": "8thCAT",
+    "04-23": "EnglishCAT",
+    "04-24": "EnglishPer",
+    "04-30": "MathCAT",
+    "05-01": "MathPer"
+};
+
+const todayKey = `${(new Date().getMonth() + 1).toString().padStart(2, "0")}-${new Date().getDate().toString().padStart(2, "0")}`;
+if (overrideSchedules[todayKey]) currentSchedule = schedules[overrideSchedules[todayKey]];
 
 function updateSchedule() {
     const now = new Date();
     const $schedule = $(".schedule").empty();
     let txt = "Schedule";
-    const currentMonth = now.getMonth();
-    const currentDate = now.getDate();
 
-    if (currentMonth === 3 && currentDate >= 5 && currentDate <= 13) txt = "It's *spring* break go do something why are you on this website right now what are you doing right now";
-    else if (!currentSchedule.length) txt = "Nothing planned for today :/";
+    if (!currentSchedule.length) txt = "Nothing planned for today :/";
     
     $("<p class='title'>").text(txt).css("font-family", localStorage.getItem("font")).appendTo($schedule);
+    for (let i = 0; i < currentSchedule.length; i++) {
+        const [hour, minute, name] = currentSchedule[i];
+        const [prevHour, prevMinute] = i > 0 ? currentSchedule[i - 1] : [hour, minute];
+        const formatted = `${prevHour}:${prevMinute.toString().padStart(2, "0")} - ${hour}:${minute.toString().padStart(2, "0")} | ${name}`;
+        $("<p>").addClass("heading-1").text(formatted).css("font-family", localStorage.getItem("font")).appendTo($schedule);
+    }
 
     let foundNextPeriod = false;
     for (let i = 0; i < currentSchedule.length; i++) {
@@ -278,7 +372,6 @@ $(document).ready(function () {
 const secretKeyCodes = [
     ["b", "e", "l", "l"], // Switch to bell.plus font
     ["t", "i", "t", "l", "e"], // Show time in title
-    ["p", "r", "o", "g", "r", "e", "s", "s"], // Show progress bar
     ["p", "i", "z", "z", "a"], // Show pizza message
     ["s", "u", "s"], // Show suspense message
     ["s", "p", "r", "i", "n", "g"], // Show spring break message
@@ -313,10 +406,6 @@ function triggerSecretAction(code) {
         "title": () => {
             localStorage.setItem("displayInTitle", localStorage.getItem("displayInTitle") === "true" ? "false" : "true");
             if (localStorage.getItem("displayInTitle") === "false") $(".header").text("Chime");
-        },
-        "progress": () => {
-            localStorage.setItem("progress", localStorage.getItem("progress") === "true" ? "false" : "true");
-            $(".progress-timer").toggle();
         },
         "pizza": () => {
             $(".pizza").show().hide(3000);
