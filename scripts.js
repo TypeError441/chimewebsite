@@ -215,20 +215,16 @@ const schedules = {
 
 const scheduleKeys = ["Weekend", "Normal", "Tutorial", "Even", "Odd", "Advisory", "Weekend", "Minimum", "Assembly", "???", "8th CAST", "English CAT", "English Performance Task", "Math CAT", "Math Performance Task"];
 let dayIndex = new Date().getDay();
-let currentSchedule = schedules[scheduleKeys[dayIndex]];
 
-const overrideSchedules = {
-    "04-21": "8th CAST",
-    "04-22": "8th CAST",
-    "04-23": "English CAT",
-    "04-24": "English Performance Task",
-    "04-30": "Math CAT",
-    "05-01": "Math Performance Task"
-};
-
-const todayKey = `${(new Date().getMonth() + 1).toString().padStart(2, "0")}-${new Date().getDate().toString().padStart(2, "0")}`;
-$(".leave").text(todayKey);
-if (overrideSchedules[todayKey]) currentSchedule = schedules[overrideSchedules[todayKey]];
+let currentSchedule;
+if (overrideSchedules[todayKey]) {
+    currentSchedule = schedules[overrideSchedules[todayKey]];
+    console.log(`Override matched: ${todayKey} → ${overrideSchedules[todayKey]}`);
+} else {
+    const dayIndex = today.getDay();
+    currentSchedule = schedules[scheduleKeys[dayIndex]];
+    console.log(`No override. Using default schedule: ${scheduleKeys[dayIndex]}`);
+}
 
 function updateSchedule() {
     const now = new Date();
