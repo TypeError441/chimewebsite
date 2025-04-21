@@ -218,12 +218,12 @@ let dayIndex = new Date().getDay();
 let currentSchedule = schedules[scheduleKeys[dayIndex]];
 
 const overrideSchedules = {
-    "04-21": "8thCAT",
-    "04-22": "8thCAT",
-    "04-23": "EnglishCAT",
-    "04-24": "EnglishPer",
-    "04-30": "MathCAT",
-    "05-01": "MathPer"
+    "04-21": "8th CAST",
+    "04-22": "8th CAST",
+    "04-23": "English CAT",
+    "04-24": "English Performance Task",
+    "04-30": "Math CAT",
+    "05-01": "Math Performance Task"
 };
 
 const todayKey = `${(new Date().getMonth() + 1).toString().padStart(2, "0")}-${new Date().getDate().toString().padStart(2, "0")}`;
