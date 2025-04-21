@@ -227,6 +227,7 @@ const overrideSchedules = {
 };
 
 const todayKey = `${(new Date().getMonth() + 1).toString().padStart(2, "0")}-${new Date().getDate().toString().padStart(2, "0")}`;
+$(".leave").text(todayKey);
 if (overrideSchedules[todayKey]) currentSchedule = schedules[overrideSchedules[todayKey]];
 
 function updateSchedule() {
