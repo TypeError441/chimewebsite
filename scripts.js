@@ -230,8 +230,9 @@ const overrideSchedules = {
 let dateIndex = new Date().getDate();
 let monthIndex = new Date().getMonth() + 1;
 let overrideCheckString = dateIndex + "-" + monthIndex;
-console.log(overrideSchedules[overrideCheckString]);
+console.log(overrideSchedules[overrideCheckString] != undefined);
 if (overrideSchedules[overrideCheckString] != undefined) currentSchedule = schedules[overrideSchedules[overrideCheckString]];
+console.log(currentSchedule);
 
 function updateSchedule() {
     const now = new Date();
