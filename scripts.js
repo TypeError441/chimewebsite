@@ -216,23 +216,21 @@ const schedules = {
 const scheduleKeys = ["Weekend", "Normal", "Tutorial", "Even", "Odd", "Advisory", "Weekend", "Minimum", "Assembly", "???", "8th CAST", "English CAT", "English Performance Task", "Math CAT", "Math Performance Task"];
 let dayIndex = new Date().getDay();
 
-let currentSchedule = schedules[scheduleKeys[dayIndex]];
-
 const overrideSchedules = {
-    "21-4": "8th CAST",
-    "22-4": "8th CAST",
-    "23-4": "English CAT",
-    "24-4": "English Performance Task",
-    "30-4": "Math CAT",
-    "1-5": "Math Performance Task"
+    "21-4": "11",
+    "22-4": "11",
+    "23-4": "12",
+    "24-4": "13",
+    "30-4": "14",
+    "1-5": "15"
 };
 
 let dateIndex = new Date().getDate();
 let monthIndex = new Date().getMonth() + 1;
 let overrideCheckString = dateIndex + "-" + monthIndex;
-console.log(overrideSchedules[overrideCheckString] != undefined);
-if (overrideSchedules[overrideCheckString] != undefined) currentSchedule = schedules[overrideSchedules[overrideCheckString]];
-console.log(currentSchedule);
+if (overrideSchedules[overrideCheckString] != undefined) dayIndex = overrideSchedules[overrideCheckString];
+
+let currentSchedule = schedules[scheduleKeys[dayIndex]];
 
 function updateSchedule() {
     const now = new Date();
