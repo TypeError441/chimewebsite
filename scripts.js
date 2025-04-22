@@ -387,7 +387,7 @@ const secretKeyCodes = {
         localStorage.setItem("displayInTitle", toggle);
         if (toggle === "false") $(".header").text("Chime");
     },
-    "pizza": () => {
+    "pi": () => {
         $(".pizza").show().hide(3000);
     },
     "sus": () => {
