@@ -374,69 +374,55 @@ $(document).ready(function () {
     update();
 });
 
-// Easter eggs
-const secretKeyCodes = [
-    ["b", "e", "l", "l"], // Switch to bell.plus font
-    ["t", "i", "t", "l", "e"], // Show time in title
-    ["p", "i", "z", "z", "a"], // Show pizza message
-    ["s", "u", "s"], // Show suspense message
-    ["s", "p", "r", "i", "n", "g"], // Show spring break message
-    ["s", "c", "h", "e", "d", "u", "l", "e"], // Switch to 22:03 schedule
-    ["c", "a", "a", "s", "p", "p"], // Show CAASPP message
-];
+const secretKeyCodes = {
+    "bell": () => {
+        $(".belldefault").show();
+        $("*").css("font-family", "'Roboto', sans-serif");
+        $(".schedule").css("font-family", "'Roboto', sans-serif");
+        $("select.font").val("'Roboto', sans-serif");
+        localStorage.setItem("font", "'Roboto', sans-serif");
+    },
+    "title": () => {
+        const toggle = localStorage.getItem("displayInTitle") === "true" ? "false" : "true";
+        localStorage.setItem("displayInTitle", toggle);
+        if (toggle === "false") $(".header").text("Chime");
+    },
+    "pizza": () => {
+        $(".pizza").show().hide(3000);
+    },
+    "sus": () => {
+        $(".suspense").show().hide(3000);
+    },
+    "spring": () => {
+        const n = $("<p class='title'>").text("It's *spring* break go do something why are you on this website right now what are you doing right now (easter egg ver.)");
+        n.css("font-family", localStorage.getItem("font"));
+        $(".schedule").html(n);
+    },
+    "schedule": () => {
+        $(".twentytwoothree").show();
+        dayIndex = 6;
+        currentSchedule = schedules["???"];
+        updateSchedule();
+        $("select.schedules").val("9");
+    },
+    "caaspp": () => {
+        $(".caasppreminder").show();
+    }
+};
 
-let currentInputs = [];
+const secretStrings = Object.keys(secretKeyCodes);
+const maxLength = Math.max(...secretStrings.map(s => s.length));
+let buffer = "";
 
 document.addEventListener("keydown", (event) => {
-    currentInputs.push(event.key);
-    secretKeyCodes.forEach(secretCode => {
-        if (currentInputs.slice(-secretCode.length).join(",") === secretCode.join(",")) {
-            triggerSecretAction(secretCode);
-            currentInputs = [];
-        }
-    });
+    buffer += event.key.toLowerCase();
+    buffer = buffer.slice(-maxLength);
 
-    if (currentInputs.length > Math.max(...secretKeyCodes.map(code => code.length))) {
-        currentInputs.shift();
+    for (const code of secretStrings) {
+        if (buffer.endsWith(code)) {
+            secretKeyCodes[code]();
+            buffer = "";
+            break;
+        }
     }
 });
-
-function triggerSecretAction(code) {
-    const actions = {
-        "bell": () => {
-            $(".belldefault").show();
-            $("*").css("font-family", "'Roboto', sans-serif");
-            $(".schedule").css("font-family", "'Roboto', sans-serif");
-            $("select.font").val("'Roboto', sans-serif");
-            localStorage.setItem("font", "'Roboto', sans-serif");
-        },
-        "title": () => {
-            localStorage.setItem("displayInTitle", localStorage.getItem("displayInTitle") === "true" ? "false" : "true");
-            if (localStorage.getItem("displayInTitle") === "false") $(".header").text("Chime");
-        },
-        "pizza": () => {
-            $(".pizza").show().hide(3000);
-        },
-        "sus": () => {
-            $(".suspense").show().hide(3000);
-        },
-        "spring": () => {
-            const n = $("<p class='title'>").text("It's *spring* break go do something why are you on this website right now what are you doing right now (easter egg ver.)");
-            n.css("font-family", localStorage.getItem("font"));
-            $(".schedule").html(n);
-        },
-        "schedule": () => {
-            $(".twentytwoothree").show();
-            dayIndex = 6;
-            currentSchedule = schedules["???"];
-            updateSchedule();
-            $("select.schedules").val("9");
-        },
-        "caaspp": () => {
-            $(".caasppreminder").show();
-        }
-    };
-    
-    const action = actions[code.join("")];
-    if (action) action();
-}
