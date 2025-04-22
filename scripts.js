@@ -1,5 +1,5 @@
 // Variables
-var version = "CAASPP ver.";
+var version = "CAASPP version";
 
 const schedules = {
     "Normal": [
