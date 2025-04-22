@@ -217,12 +217,12 @@ const scheduleKeys = ["Weekend", "Normal", "Tutorial", "Even", "Odd", "Advisory"
 let dayIndex = new Date().getDay();
 
 const overrideSchedules = {
-    "21-4": "11",
-    "22-4": "11",
-    "23-4": "12",
-    "24-4": "13",
-    "30-4": "14",
-    "1-5": "15"
+    "21-4": "10",
+    "22-4": "10",
+    "23-4": "11",
+    "24-4": "12",
+    "30-4": "13",
+    "1-5": "14"
 };
 
 let dateIndex = new Date().getDate();
