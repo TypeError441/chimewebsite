@@ -363,6 +363,8 @@ $(document).ready(function () {
         $(".leave").text($(".leave").text() === "X" ? "Panic" : "X");
     });
 
+    if (localStorage.getItem("caasppreminder") == "false") $(".caasppreminder").hide();
+
     $(".leave").click(function () {
         window.location.href = "https://powerschool.losaltos.k12.ca.us/guardian/home.html";
         window.open("https://classroom.google.com/", "_blank").focus();
