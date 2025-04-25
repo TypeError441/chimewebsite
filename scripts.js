@@ -217,12 +217,27 @@ const scheduleKeys = ["Weekend", "Normal", "Tutorial", "Even", "Odd", "Advisory"
 let dayIndex = new Date().getDay();
 
 const overrideSchedules = {
+    "18-4": "2",
     "21-4": "10",
     "22-4": "10",
     "23-4": "11",
     "24-4": "12",
     "30-4": "13",
-    "1-5": "14"
+    "1-5": "14",
+    "2-5": "1",
+    "9-5": "8",
+    "9-5": "8",
+    "23-5": "8",
+    "26-5": "0",
+    "27-5": "1",
+    // "28-5": "wednesday nonblock",
+    "29-5": "1",
+    "29-5": "7",
+    "2-6": "8",
+    // "3-6": "Boardwalk/Movie",
+    // "4-6": "Graduation",
+    "5-6": "0",
+    "6-6": "0",
 };
 
 let dateIndex = new Date().getDate();
