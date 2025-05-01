@@ -423,6 +423,7 @@ const secretKeyCodes = {
     },
     "caaspp": () => {
         $(".caasppreminder").show();
+        $(".caasppschedules").show();
     }
 };
 
