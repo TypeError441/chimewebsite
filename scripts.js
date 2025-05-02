@@ -320,6 +320,7 @@ function update() {
 $(document).ready(function () {
     $(".version").text(version);
     $(".belldefault").hide();
+    $(".caasppschedules").hide();
     $(".twentytwoothree").hide();
     const selectedFont = localStorage.getItem("font");
 
