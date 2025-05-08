@@ -2,7 +2,7 @@
 let todayDate = new Date();
 let schoolEndDate = new Date("2025-06-04");
 let timeDifference = schoolEndDate - todayDate;
-var version = "Only " + Math.floor(timeDifference / (1000 * 3600 * 24)) + " days left...";
+var version = Math.floor(timeDifference / (1000 * 3600 * 24)) + " days left...";
 
 const schedules = {
     "Normal": [
@@ -129,6 +129,25 @@ const schedules = {
         [14, 20, "G"],
         [14, 23, "Passing to H"],
         [15, 3, "H"]
+    ],
+    "Wednesday Non-block": [
+        [9, 12, "Free"],
+        [9, 17, "Passing to Period 1"],
+        [9, 56, "Period 1"],
+        [9, 59, "Passing to Period 2"],
+        [10, 37, "Period 2"],
+        [10, 40, "Passing to Period 3"],
+        [11, 28, "Period 3"],
+        [11, 42, "Brunch"],
+        [11, 45, "Passing to Period 4"],
+        [12, 23, "Period 4"],
+        [12, 26, "Passing to Period 5"],
+        [13, 4, "Period 5"],
+        [13, 41, "Lunch"],
+        [13, 44, "Passing to Period 6"],
+        [14, 22, "Period 6"],
+        [14, 25, "Passing to Period 7"],
+        [15, 3, "Period 7"]
     ],
     "Weekend": [
     ],
