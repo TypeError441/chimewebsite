@@ -239,28 +239,26 @@ const scheduleKeys = ["Weekend", "Normal", "Tutorial", "Even", "Odd", "Advisory"
 let dayIndex = new Date().getDay();
 
 const overrideSchedules = {
-    "18-4": "2",
-    "21-4": "10",
-    "22-4": "10",
-    "23-4": "11",
-    "24-4": "12",
-    "25-4": "1",
-    "30-4": "13",
-    "1-5": "14",
-    "2-5": "1",
-    "9-5": "8",
-    "9-5": "8",
-    "23-5": "8",
-    "26-5": "0",
-    "27-5": "1",
-    "28-5": "15",
-    "29-5": "1",
-    "29-5": "7",
-    "2-6": "8",
+    "18-4": "2", // Tutorial | Done
+    "21-4": "10", // Sci CAST | Done
+    "22-4": "10", // Sci CAST | Done
+    "23-4": "11", // CAASPP | Done
+    "24-4": "12", // CAASPP | Done
+    "30-4": "13", // CAASPP | Done
+    "1-5": "14", // CAASPP | Done
+    "2-5": "1", // Monday | Done
+    "9-5": "8", // Mystery Bucket: H | Done
+    "23-5": "8", // Ice Cream Social: H
+    "26-5": "0", // Memorial Day
+    "27-5": "1", // Monday Schedule
+    "28-5": "15", // Wednesday Non-block
+    "29-5": "1", // Monday Schedule
+    "29-5": "7", // Minimum Schedule: Chromebook Collection
+    "2-6": "8", // 8th Grade Awards: C
     // "3-6": "Boardwalk/Movie",
     // "4-6": "Graduation",
-    "5-6": "0",
-    "6-6": "0",
+    "5-6": "0", // School's over
+    "6-6": "0", // School's over
 };
 
 let dateIndex = new Date().getDate();
