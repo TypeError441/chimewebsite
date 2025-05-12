@@ -1,8 +1,26 @@
 // Variables
 let todayDate = new Date();
 let schoolEndDate = new Date("2025-06-04");
-let timeDifference = schoolEndDate - todayDate;
-var version = Math.floor(timeDifference / (1000 * 3600 * 24)) + " days left...";
+
+// Remove time portion for accurate full-day comparison
+todayDate.setHours(0, 0, 0, 0);
+schoolEndDate.setHours(0, 0, 0, 0);
+
+// Count weekdays only
+let weekdaysLeft = 0;
+let currentDate = new Date(todayDate);
+
+while (currentDate <= schoolEndDate) {
+      let day = currentDate.getDay();
+      if (day !== 0 && day !== 6) {
+            // Not Sunday (0) or Saturday (6)
+            weekdaysLeft++;
+      }
+      currentDate.setDate(currentDate.getDate() + 1);
+}
+
+let version = `${weekdaysLeft} days left...`;
+console.log(version);
 
 const schedules = {
     "Normal": [
