@@ -11,12 +11,21 @@ let weekdaysLeft = 0;
 let currentDate = new Date(todayDate);
 
 while (currentDate <= schoolEndDate) {
-      let day = currentDate.getDay();
-      if (day !== 0 && day !== 6) {
-            // Not Sunday (0) or Saturday (6)
-            weekdaysLeft++;
-      }
-      currentDate.setDate(currentDate.getDate() + 1);
+    let day = currentDate.getDay();
+    let isWeekday = day !== 0 && day !== 6;
+
+    // Check if the date is May 26, 2025
+    let isMay26 = (
+        currentDate.getFullYear() === 2025 &&
+        currentDate.getMonth() === 4 &&  // May is month index 4
+        currentDate.getDate() === 26
+    );
+
+    if (isWeekday && !isMay26) {
+        weekdaysLeft++;
+    }
+
+    currentDate.setDate(currentDate.getDate() + 1);
 }
 
 let version = `${weekdaysLeft} days left...`;
