@@ -408,8 +408,6 @@ $(document).ready(function () {
     });
 
     if (localStorage.getItem("progress") === "false") $(".progress-timer").toggle();
-    $(".pizza").toggle();
-    $(".suspense").toggle();
 
     const settingsOpened = localStorage.getItem("settings");
     if (settingsOpened !== null) {
@@ -432,7 +430,7 @@ $(document).ready(function () {
     });
 
     if (localStorage.getItem("caasppreminder") == "false") $(".caasppreminder").hide();
-
+    if (localStorage.getItem("marquee") === "true") $(".footer").addClass(".marquee");
     $(".leave").click(function () {
         window.location.href = "https://powerschool.losaltos.k12.ca.us/guardian/home.html";
         window.open("https://classroom.google.com/", "_blank").focus();
@@ -518,6 +516,12 @@ const secretKeyCodes = {
     "caaspp": () => {
         $(".caasppreminder").show();
         $(".caasppschedules").show();
+    },
+    "days": () => {
+        const toggle = localStorage.getItem("marquee") === "true" ? "false" : "true";
+        localStorage.setItem("marquee", toggle);
+        if (toggle === "true") $(".footer").addClass(".marquee");
+        else if (toggle === "false") $(".footer").removeClass(".marquee");
     }
 };
 
