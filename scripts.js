@@ -31,7 +31,7 @@ while (currentDate <= schoolEndDate) {
 var version = "";
 var versionCounter = 500;
 for(var i = 1; i < versionCounter; i++) {
-     version += `${weekdaysLeft} days left..... VERSION 3`;
+     version += `${weekdaysLeft} days left..... v3 `;
 }
 
 const schedules = {
