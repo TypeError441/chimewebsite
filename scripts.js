@@ -475,7 +475,9 @@ const secretKeyCodes = {
         });
         $(".images").append($pizza);
         $("#" + idrandom).hide();
-        $("#" + idrandom).show().hide(3000);
+        $("#" + idrandom).show().hide(3000, function(){
+            $(this).remove();
+        });
     },
     "sus": () => {
         let topPercent = Math.random() * 100;
@@ -497,7 +499,9 @@ const secretKeyCodes = {
         });
         $(".images").append($suspense);
         $("#" + idrandom).hide();
-        $("#" + idrandom).show().hide(3000);
+        $("#" + idrandom).show().hide(3000, function(){
+            $(this).remove();
+        });
     },
     "spring": () => {
         const n = $("<p class='title'>").text("It's *spring* break go do something why are you on this website right now what are you doing right now (easter egg ver.)");
