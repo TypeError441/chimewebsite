@@ -28,8 +28,10 @@ while (currentDate <= schoolEndDate) {
     currentDate.setDate(currentDate.getDate() + 1);
 }
 
-let version = `${weekdaysLeft} days left...`;
-console.log(version);
+var version = "";
+for(var i = 1; i < 100; i++) {
+     version += `${weekdaysLeft} days left...`;
+}
 
 const schedules = {
     "Normal": [
