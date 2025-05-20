@@ -28,11 +28,11 @@ while (currentDate <= schoolEndDate) {
     currentDate.setDate(currentDate.getDate() + 1);
 }
 
-var version = `${weekdaysLeft} days left..... `;
-// var versionCounter = 500;
-// for(var i = 1; i < versionCounter; i++) {
-//      version += `${weekdaysLeft} days left..... `;
-// }
+var version = "";
+var versionCounter = 500;
+for(var i = 1; i < versionCounter; i++) {
+     version += `${weekdaysLeft} days left..... `;
+}
 
 const schedules = {
     "Normal": [
@@ -430,7 +430,7 @@ $(document).ready(function () {
     });
 
     if (localStorage.getItem("caasppreminder") == "false") $(".caasppreminder").hide();
-    if (localStorage.getItem("marquee") === "true") $(".footer").addClass(".marquee");
+    
     $(".leave").click(function () {
         window.location.href = "https://powerschool.losaltos.k12.ca.us/guardian/home.html";
         window.open("https://classroom.google.com/", "_blank").focus();
@@ -516,12 +516,6 @@ const secretKeyCodes = {
     "caaspp": () => {
         $(".caasppreminder").show();
         $(".caasppschedules").show();
-    },
-    "days": () => {
-        const toggle = localStorage.getItem("marquee") === "true" ? "false" : "true";
-        localStorage.setItem("marquee", toggle);
-        if (toggle === "true") $(".footer").addClass(".marquee");
-        else if (toggle === "false") $(".footer").removeClass(".marquee");
     }
 };
 
