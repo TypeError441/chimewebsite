@@ -456,7 +456,26 @@ const secretKeyCodes = {
         if (toggle === "false") $(".header").text("Chime");
     },
     "pi": () => {
-        $(".pizza").show().hide(3000);
+        let topPercent = Math.random() * 100;
+        let leftPercent = Math.random() * 100;
+        let idrandom = "pi" + Math.floor(Math.random() * 10000);
+        let $pizza = $('<img>', {
+            id: idrandom,
+            class: 'pizza',
+            src: 'src/image/cheese_pizza.png',
+            css: {
+                position: 'fixed',
+                top: topPercent + '%',
+                left: leftPercent + '%',
+                transform: 'translate(-50%, -50%)',
+                zIndex: 9999,
+                width: '300px',
+                height: 'auto'
+            }
+        });
+        $(".images").append($pizza);
+        $("#" + idrandom).hide();
+        $("#" + idrandom).show().hide(3000);
     },
     "sus": () => {
         $(".suspense").show().hide(3000);
