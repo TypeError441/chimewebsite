@@ -477,7 +477,7 @@ const secretKeyCodes = {
             $(this).remove();
         });
     },
-    "sus": () => {
+    "su": () => {
         let topPercent = Math.random() * 100;
         let leftPercent = Math.random() * 100;
         let idrandom = "sus" + Math.floor(Math.random() * 10000);
