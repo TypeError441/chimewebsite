@@ -29,10 +29,10 @@ while (currentDate <= schoolEndDate) {
 }
 
 var version = `${weekdaysLeft} days left..... `;
-var versionCounter = 500;
-for(var i = 1; i < versionCounter; i++) {
-     version += `${weekdaysLeft} days left..... `;
-}
+// var versionCounter = 500;
+// for(var i = 1; i < versionCounter; i++) {
+//      version += `${weekdaysLeft} days left..... `;
+// }
 
 const schedules = {
     "Normal": [
