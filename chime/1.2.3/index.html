@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Chime | Loading...</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
+        <script src="scripts.js"></script>
+    </head>
+    <body>
+        <div class="header title">Chime</div>
+        <div class="container">
+            <section class="options">
+                <span class="optionsButtons">
+                    <button onclick="switchSchedule();">Switch Schedule</button>
+                    <select name="Schedule" class="schedules">
+                        <option value="0">Sunday (weekend)</option>
+                        <option value="1">Monday (normal)</option>
+                        <option value="2">Tuesday (tutorial)</option>
+                        <option value="3">Wednesday (even block)</option>
+                        <option value="4">Thursday (odd block)</option>
+                        <option value="5">Friday (advisory)</option>
+                        <option value="6">Saturday (weekend)</option>
+                        <option value="7">Minimum</option>
+                        <option value="8">Assembly</option>
+                    </select>
+                    <select name="Theme" class="theme">
+                        <option value="default-dark">Default (dark)</option>
+                        <option value="default-light">Default (light)</option>
+                        <option value="blue-dark">Blue (dark)</option>
+                        <option value="blue-light">Blue (light)</option>
+                    </select>
+                    <select name="Font" class="font">
+                        <option value="'Roboto'">bell.plus default</option>
+                        <option value="'Roboto'">Sans-serif</option>
+                        <option value="serif">Serif</option>
+                        <option value="monospace">Monospace</option>
+                        <option value="cursive">Cursive</option>
+                        <option value="fantasy">Fantasy</option>
+                    </select>
+                </span>
+                <span style="float: right;">
+                    <button class="settings" onclick="toggleSettings();">Hide</button>
+                    <button class="leave" onclick="$('body').hide(); window.location.href='https://classroom.google.com/';">Classroom (Panic)</button>
+                </span>
+            </section>
+        
+            <section class="content">
+                <section class="period">
+                    <p class="oversized text-timer"></p>
+                    <p class="title text-period"></p>
+                    <p class="title text-schedule"></p>
+                </section>
+                <section class="schedule">
+                    <p class="oversized">Schedule (WIP)</p>
+                    <!-- <p class="title schedule1">?:?? - ?:?? - Period | Loading...</p> -->
+                </section>
+            </section>
+        </div>
+        <div class="footer subtitle">
+            <span>Made by T</span>
+            <span class="version" style="float: right;">v?</span>
+        </div>
+    </body>
+</html>
