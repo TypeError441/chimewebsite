@@ -1,1 +1,87 @@
-
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Chime | Loading...</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/png" href="https://www.gstatic.com/classroom/ic_product_classroom_144.png">
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
+        <script src="scripts.js"></script>
+    </head>
+    <body>
+        <div class="header title">Chime</div>
+        <div class="container">
+            <section class="options">
+                <span class="optionsButtons">
+                    <select name="Schedule" class="schedules">
+                        <option value="0">Sunday (weekend)</option>
+                        <option value="1">Monday (normal)</option>
+                        <option value="2">Tuesday (tutorial)</option>
+                        <option value="3">Wednesday (even block)</option>
+                        <option value="4">Thursday (odd block)</option>
+                        <option value="5">Friday (advisory)</option>
+                        <option value="6">Saturday (weekend)</option>
+                        <option value="7">Minimum</option>
+                        <option value="8">Assembly</option>
+                        <option value="15">Wednesday (non-block)</option>
+                        <option class="caasppschedules" value="10">8th Grade CAST (caaspp)</option>
+                        <option class="caasppschedules" value="11">English CAT (caaspp)</option>
+                        <option class="caasppschedules" value="12">English Performance Task (caaspp)</option>
+                        <option class="caasppschedules" value="13">Math CAT (caaspp)</option>
+                        <option class="caasppschedules" value="14">Math Performance Task (caaspp)</option>
+                        <option class="twentytwoothree" value="9">22:03</option>
+                    </select>
+                    <select name="Theme" class="theme">
+                        <option value="default-dark">Default (dark)</option>
+                        <option value="default-light">Default (light)</option>
+                        <option value="blue-dark">Blue (dark)</option>
+                        <option value="blue-light">Blue (light)</option>
+                        <option value="coffee">Coffee</option>
+                        <option value="code">Code</option>
+                        <option value="space">Space</option>
+                        <option value="ocean">Ocean (honestly why would you use this)</option>
+                        <option value="sunset">Sunset (honestly why would you use this)</option>
+                    </select>
+                    <select name="Font" class="font">
+                        <option value="'Arial', sans-serif">Arial</option>
+                        <option value="'Verdana, sans-serif'">Verdana</option>
+                        <option value="'Tahoma', sans-serif">Tahoma</option>
+                        <option value="'Trebuchet MS', sans-serif">Trebuchet MS</option>
+                        <option value="'Times New Roman', serif">Times New Roman</option>
+                        <option value="'Georgia', serif">Georgia</option>
+                        <option value="'Garamond', serif">Garamond</option>
+                        <option value="'Courier New', monospace">Courier New</option>
+                        <option value="'Brush Script MT', cursive">Comic Sans MS/Brush Script MT</option>
+                        <option value="'Moo Lah Lah'">???</option>
+                        <option class="belldefault" value="'Roboto', sans-serif">bell.plus default ⭐️</option>
+                    </select>
+                    <p class="caasppreminder" style="float: right; display: none;">
+                        CAASPP schedules are available 
+                        <a href="#" onclick="$('.caasppreminder').hide(); localStorage.setItem('caasppreminder', 'false');">Hide</a>
+                    </p>
+                </span>
+            </section>
+        
+            <section class="content">
+                <span style="float: right; margin: 8px;">
+                    <button class="leave">Panic</button>
+                    <button class="settings">▲</button>
+                </span>
+                <section class="period">
+                    <p class="oversized text-timer"></p>
+                    <p class="title text-period"></p>
+                    <p class="title text-schedule"></p>
+                </section>
+                <section class="schedule">
+                    <p class="title">Schedule</p>
+                </section>
+            <img class="q4_schedule" src="../src/image/q4_schedule.png" 
+             style="width: 90%; height: auto; display: block; margin-top: 15px; margin-left: auto; margin-right: auto;">
+            </section>
+        </div>
+        <div class="images"></div>
+        <div scrollamount="12" class="footer subtitle">
+            <span class="version" style="float: right;"></span>
+        </div>
+    </body>
+</html>
