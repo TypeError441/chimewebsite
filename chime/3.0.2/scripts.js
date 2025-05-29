@@ -279,12 +279,12 @@ const overrideSchedules = {
     "1-5": "14", // CAASPP | Done
     "2-5": "1", // Monday | Done
     "9-5": "8", // Mystery Bucket: H | Done
-    "23-5": "8", // Ice Cream Social: H
-    "26-5": "0", // Memorial Day
-    "27-5": "1", // Monday Schedule
-    "28-5": "15", // Wednesday Non-block
-    "29-5": "1", // Monday Schedule
-    "29-5": "7", // Minimum Schedule: Chromebook Collection
+    "23-5": "8", // Ice Cream Social: H | Done
+    "26-5": "0", // Memorial Day | Done
+    "27-5": "1", // Monday Schedule | Done
+    "28-5": "15", // Wednesday Non-block | Done
+    "29-5": "1", // Monday Schedule | Done
+    "30-5": "7", // Minimum Schedule: Chromebook Collection
     "2-6": "8", // 8th Grade Awards: C
     // "3-6": "Boardwalk/Movie",
     // "4-6": "Graduation",
