@@ -538,7 +538,7 @@ const secretKeyCodes = {
         $(".caasppreminder").show();
         $(".caasppschedules").show();
     },
-    "spin": () => {
+    "rotate": () => {
         $("body").addClass("rotate");
         $("body").removeClass("rotate").delay("1000");
     }
