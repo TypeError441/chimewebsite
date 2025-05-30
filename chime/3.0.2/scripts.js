@@ -447,7 +447,7 @@ $(document).ready(function () {
 
         $(".optionsButtons").slideToggle(200);
         $(".settings").text($(".settings").text() === "▼" ? "▲" : "▼");
-        $(".leave").text($(".leave").text() === "X" ? "Panic" : "X");
+        $(".leave").text($(".leave").text() === "X" ? "Classroom" : "X");
     });
 
     if (localStorage.getItem("caasppreminder") == "false") $(".caasppreminder").hide();
