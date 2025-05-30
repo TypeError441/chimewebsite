@@ -197,12 +197,10 @@ body {
     background-position: center;
 
     padding: 50px 0;
-    
-    transition: transform 1s;
 }
 
 body.loaded * { transition: color 0.2s, background-color 0.2s; }
-body.rotate * { transform: rotate(180deg); }
+body.rotate * { animation: spin 1s linear forwards; }
 
 p, h1, h2, h3, h4, h5, h6 { font-size: 14px; }
 
@@ -294,4 +292,13 @@ option {
 .schedule {
     background-color: var(--secondary-background-color);
     margin-top: 20px;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
