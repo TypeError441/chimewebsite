@@ -291,3 +291,5 @@ option {
     background-color: var(--secondary-background-color);
     margin-top: 20px;
 }
+
+.leave { font-weight: bold; }
