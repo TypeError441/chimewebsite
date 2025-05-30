@@ -277,13 +277,13 @@ const schedules = {
         [10, 7, "Period 4"],
         [10, 10, "Passing to Period 5"],
         [10, 32, "Period 5"],
-        [10, 51, "Brunch"],
-        [10, 54, "Passing to Period 6"],
-        [11, 16, "Period 6"],
-        [11, 19, "Passing to Period 7"],
-        [11, 41, "Period 7"],
-        [11, 44, "Passing to Advisory"],
-        [12, 6, "Advisory"]
+        [10, 47, "Brunch"],
+        [10, 50, "Passing to Period 6"],
+        [11, 12, "Period 6"],
+        [11, 15, "Passing to Period 7"],
+        [11, 37, "Period 7"],
+        [11, 40, "Passing to Advisory"],
+        [12, 30, "Advisory"]
     ],
 };
 
