@@ -197,7 +197,7 @@ body {
     background-position: center;
 
     padding: 50px 0;
-    transform: rotate(360deg);
+    transform: rotate(180deg);
     transition: transform 1s;
 }
 
