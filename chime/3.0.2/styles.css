@@ -199,10 +199,10 @@ body {
     padding: 50px 0;
     
     transition: transform 1s;
-    transform: rotate(180deg);
 }
 
 body.loaded * { transition: color 0.2s, background-color 0.2s; }
+body.loaded * { transform: rotate(180deg); }
 
 p, h1, h2, h3, h4, h5, h6 { font-size: 14px; }
 
