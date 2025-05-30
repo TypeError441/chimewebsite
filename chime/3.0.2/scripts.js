@@ -130,10 +130,11 @@ const schedules = {
         [9, 3, "Passing to Period 2"],
         [9, 33, "Period 2"],
         [9, 36, "Passing to Period 3"],
-        [10, 6, "Passing to Period 4"],
-        [10, 9, "Period 4"],
-        [10, 39, "Brunch"],
-        [10, 51, "Passing to Period 5"],
+        [10, 6, "Period 3"],
+        [10, 9, "Passing to Period 4"],
+        [10, 39, "Period 4"],
+        [10, 51, "Brunch"],
+        [10, 54, "Passing to Period 5"],
         [11, 24, "Period 5"],
         [11, 27, "Passing to Period 6"],
         [11, 57, "Period 6"],
@@ -264,9 +265,29 @@ const schedules = {
         [14, 2, "Passing to Period 7"],
         [15, 3, "Period 7"]
     ],
+    "Chromebook": [
+        [8, 25, "Free"],
+        [8, 30, "Passing to Period 1"],
+        [8, 52, "Period 1"],
+        [8, 55, "Passing to Period 2"],
+        [9, 17, "Period 2"],
+        [9, 20, "Passing to Period 3"],
+        [9, 42, "Period 3"],
+        [9, 45, "Passing to Period 4"],
+        [10, 7, "Period 4"],
+        [10, 10, "Passing to Period 5"],
+        [10, 32, "Period 5"],
+        [10, 51, "Brunch"],
+        [10, 54, "Passing to Period 6"],
+        [11, 16, "Period 6"],
+        [11, 19, "Passing to Period 7"],
+        [11, 41, "Period 7"],
+        [11, 44, "Passing to Advisory"],
+        [12, 6, "Advisory"]
+    ],
 };
 
-const scheduleKeys = ["Weekend", "Normal", "Tutorial", "Even", "Odd", "Advisory", "Weekend", "Minimum", "Assembly", "???", "8th CAST", "English CAT", "English Performance Task", "Math CAT", "Math Performance Task", "Wednesday Non-block"];
+const scheduleKeys = ["Weekend", "Normal", "Tutorial", "Even", "Odd", "Advisory", "Weekend", "Minimum", "Assembly", "???", "8th CAST", "English CAT", "English Performance Task", "Math CAT", "Math Performance Task", "Wednesday Non-block", "Chromebook"];
 let dayIndex = new Date().getDay();
 
 const overrideSchedules = {
@@ -284,7 +305,7 @@ const overrideSchedules = {
     "27-5": "1", // Monday Schedule | Done
     "28-5": "15", // Wednesday Non-block | Done
     "29-5": "1", // Monday Schedule | Done
-    "30-5": "7", // Minimum Schedule: Chromebook Collection
+    "30-5": "16", // Minimum Schedule: Chromebook Collection | Done
     "2-6": "8", // 8th Grade Awards: C
     // "3-6": "Boardwalk/Movie",
     // "4-6": "Graduation",
