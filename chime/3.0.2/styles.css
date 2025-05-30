@@ -241,6 +241,7 @@ option {
 .leave { 
     background-color: var(--button-leave-background-color); 
     color: var(--button-leave-color); 
+    font-weight: bold; 
 }
 .leave:hover { 
     background-color: var(--button-leave-hover-background-color); 
@@ -291,5 +292,3 @@ option {
     background-color: var(--secondary-background-color);
     margin-top: 20px;
 }
-
-.leave { font-weight: bold; }
