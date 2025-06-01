@@ -540,9 +540,9 @@ const secretKeyCodes = {
     },
     "rotate": () => {
         $("body").addClass("rotate");
-        $("body").removeClass("rotate").delay("1000");
-        $(".caasppreminder").show();
-        $(".caasppschedules").show();
+        setTimeout(function() {
+            $("body").removeClass("rotate");
+        }, 1000);
     }
 };
 
