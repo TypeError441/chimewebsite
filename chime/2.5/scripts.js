@@ -1,38 +1,8 @@
 // Variables
 let todayDate = new Date();
 let schoolEndDate = new Date("2025-06-04");
-
-// Remove time portion for accurate full-day comparison
-todayDate.setHours(0, 0, 0, 0);
-schoolEndDate.setHours(0, 0, 0, 0);
-
-// Count weekdays only
-let weekdaysLeft = 0;
-let currentDate = new Date(todayDate);
-
-while (currentDate <= schoolEndDate) {
-    let day = currentDate.getDay();
-    let isWeekday = day !== 0 && day !== 6;
-
-    // Check if the date is May 26, 2025
-    let isMay26 = (
-        currentDate.getFullYear() === 2025 &&
-        currentDate.getMonth() === 4 &&  // May is month index 4
-        currentDate.getDate() === 26
-    );
-
-    if (isWeekday && !isMay26) {
-        weekdaysLeft++;
-    }
-
-    currentDate.setDate(currentDate.getDate() + 1);
-}
-
-var version = "";
-var versionCounter = 500;
-for(var i = 1; i < versionCounter; i++) {
-     version += `${weekdaysLeft} days left... v3... `;
-}
+let timeDifference = schoolEndDate - todayDate;
+var version = Math.floor(timeDifference / (1000 * 3600 * 24)) + " days left...";
 
 const schedules = {
     "Normal": [
@@ -408,6 +378,8 @@ $(document).ready(function () {
     });
 
     if (localStorage.getItem("progress") === "false") $(".progress-timer").toggle();
+    $(".pizza").toggle();
+    $(".suspense").toggle();
 
     const settingsOpened = localStorage.getItem("settings");
     if (settingsOpened !== null) {
@@ -430,7 +402,7 @@ $(document).ready(function () {
     });
 
     if (localStorage.getItem("caasppreminder") == "false") $(".caasppreminder").hide();
-    
+
     $(".leave").click(function () {
         window.location.href = "https://powerschool.losaltos.k12.ca.us/guardian/home.html";
         window.open("https://classroom.google.com/", "_blank").focus();
@@ -454,52 +426,10 @@ const secretKeyCodes = {
         if (toggle === "false") $(".header").text("Chime");
     },
     "pi": () => {
-        let topPercent = Math.random() * 100;
-        let leftPercent = Math.random() * 100;
-        let idrandom = "pi" + Math.floor(Math.random() * 10000);
-        let $pizza = $('<img>', {
-            id: idrandom,
-            class: 'pizza',
-            src: '../src/image/cheese_pizza.png',
-            css: {
-                position: 'fixed',
-                top: topPercent + '%',
-                left: leftPercent + '%',
-                transform: 'translate(-50%, -50%)',
-                zIndex: 9999,
-                width: '300px',
-                height: 'auto'
-            }
-        });
-        $(".images").append($pizza);
-        $("#" + idrandom).hide();
-        $("#" + idrandom).show().hide(3000, function(){
-            $(this).remove();
-        });
+        $(".pizza").show().hide(3000);
     },
-    "su": () => {
-        let topPercent = Math.random() * 100;
-        let leftPercent = Math.random() * 100;
-        let idrandom = "sus" + Math.floor(Math.random() * 10000);
-        let $suspense = $('<img>', {
-            id: idrandom,
-            class: 'suspense',
-            src: '../src/image/kesselring_suspense.png',
-            css: {
-                position: 'fixed',
-                top: topPercent + '%',
-                left: leftPercent + '%',
-                transform: 'translate(-50%, -50%)',
-                zIndex: 9999,
-                width: '300px',
-                height: 'auto'
-            }
-        });
-        $(".images").append($suspense);
-        $("#" + idrandom).hide();
-        $("#" + idrandom).show().hide(3000, function(){
-            $(this).remove();
-        });
+    "sus": () => {
+        $(".suspense").show().hide(3000);
     },
     "spring": () => {
         const n = $("<p class='title'>").text("It's *spring* break go do something why are you on this website right now what are you doing right now (easter egg ver.)");

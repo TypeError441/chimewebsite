@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body { background-color: #ffffff; }
+
+.wrapper { width: 100vw; }
+h1, h2, h3, h4, h5, h6 { font-weight: normal; }
+
+button, input {
+    display: block;
+    margin: 0.2rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+iframe {
+    display: block;
+    height: 100vh;
+    width: 100vw;
+    border: none;
+}
+
+textarea { width: 100vw; height: 90vh; }

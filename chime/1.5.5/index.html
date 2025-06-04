@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Chime | Loading...</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" type="image/png" href="https://www.gstatic.com/classroom/ic_product_classroom_144.png">
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script>
+        <script src="scripts.js"></script>
+    </head>
+    <body>
+        <div class="header title">Chime</div>
+        <div class="container">
+            <section class="options">
+                <span class="optionsButtons">
+                    <select name="Schedule" class="schedules">
+                        <option value="0">Sunday (weekend)</option>
+                        <option value="1">Monday (normal)</option>
+                        <option value="2">Tuesday (tutorial)</option>
+                        <option value="3">Wednesday (even block)</option>
+                        <option value="4">Thursday (odd block)</option>
+                        <option value="5">Friday (advisory)</option>
+                        <option value="6">Saturday (weekend)</option>
+                        <option value="7">Minimum</option>
+                        <option value="8">Assembly</option>
+                    </select>
+                    <select name="Theme" class="theme">
+                        <option value="default-dark">Default (dark)</option>
+                        <option value="default-light">Default (light)</option>
+                        <option value="blue-dark">Blue (dark)</option>
+                        <option value="blue-light">Blue (light)</option>
+                    </select>
+                    <select name="Font" class="font">
+                        <option value="'Arial', sans-serif">Arial</option>
+                        <option value="'Verdana, sans-serif'">Verdana</option>
+                        <option value="'Tahoma', sans-serif">Tahoma</option>
+                        <option value="'Trebuchet MS', sans-serif">Trebuchet MS</option>
+                        <option value="'Times New Roman', serif">Times New Roman</option>
+                        <option value="'Georgia', serif">Georgia</option>
+                        <option value="'Garamond', serif">Garamond</option>
+                        <option value="'Courier New', monospace">Courier New</option>
+                        <option value="'Brush Script MT', cursive">Comic Sans MS/Brush Script MT</option>
+                        <option value="'Moo Lah Lah'">???</option>
+                        <option class="belldefault" value="'Roboto', sans-serif">bell.plus default ⭐️</option>
+                    </select>
+                </span>
+                <span style="float: right;">
+                    <button class="leave">Panic</button>
+                    <button class="settings">▲</button>
+                </span>
+            </section>
+        
+            <section class="content">
+                <section class="period">
+                    <p class="oversized text-timer"></p>
+                    <p class="title text-period"></p>
+                    <p class="title text-schedule"></p>
+                </section>
+                <progress class="progress-timer" value="0" max="100"></progress>
+                <section class="schedule">
+                    <p class="title">Schedule</p>
+                </section>
+            </section>
+        </div>
+        <img class="pizza" src="/chime/src/image/cheese_pizza.png" 
+         style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                z-index: 9999; width: 300px; height: auto;">
+        <img class="suspense" src="/chime/src/image/kesselring_suspense.png" 
+         style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                z-index: 9999; width: 400px; height: auto;">
+        <div class="footer subtitle">
+            <span>Made by T</span>
+            <span class="version" style="float: right;">v?</span>
+        </div>
+    </body>
+</html>

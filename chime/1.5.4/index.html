@@ -23,24 +23,12 @@
                         <option value="6">Saturday (weekend)</option>
                         <option value="7">Minimum</option>
                         <option value="8">Assembly</option>
-                        <option value="15">Wednesday (non-block)</option>
-                        <option class="caasppschedules" value="10">8th Grade CAST (caaspp)</option>
-                        <option class="caasppschedules" value="11">English CAT (caaspp)</option>
-                        <option class="caasppschedules" value="12">English Performance Task (caaspp)</option>
-                        <option class="caasppschedules" value="13">Math CAT (caaspp)</option>
-                        <option class="caasppschedules" value="14">Math Performance Task (caaspp)</option>
-                        <option class="twentytwoothree" value="9">22:03</option>
                     </select>
                     <select name="Theme" class="theme">
                         <option value="default-dark">Default (dark)</option>
                         <option value="default-light">Default (light)</option>
                         <option value="blue-dark">Blue (dark)</option>
                         <option value="blue-light">Blue (light)</option>
-                        <option value="coffee">Coffee</option>
-                        <option value="code">Code</option>
-                        <option value="space">Space</option>
-                        <option value="ocean">Ocean (honestly why would you use this)</option>
-                        <option value="sunset">Sunset (honestly why would you use this)</option>
                     </select>
                     <select name="Font" class="font">
                         <option value="'Arial', sans-serif">Arial</option>
@@ -55,34 +43,28 @@
                         <option value="'Moo Lah Lah'">???</option>
                         <option class="belldefault" value="'Roboto', sans-serif">bell.plus default ⭐️</option>
                     </select>
-                    <p class="caasppreminder" style="float: right; display: none;">
-                        CAASPP schedules are available 
-                        <a href="#" onclick="$('.caasppreminder').hide(); localStorage.setItem('caasppreminder', 'false');">Hide</a>
-                    </p>
+                </span>
+                <span style="float: right;">
+                    <button class="leave">Panic</button>
+                    <button class="settings">▲</button>
                 </span>
             </section>
         
             <section class="content">
-                <span style="float: right; margin: 8px;">
-                    <button class="leave">Panic</button>
-                    <button class="settings">▲</button>
-                </span>
                 <section class="period">
                     <p class="oversized text-timer"></p>
                     <p class="title text-period"></p>
                     <p class="title text-schedule"></p>
                 </section>
+                <progress class="progress-timer" value="0" max="100"></progress>
                 <section class="schedule">
                     <p class="title">Schedule</p>
                 </section>
-            <img class="q4_schedule" src="../src/image/q4_schedule.png" 
-             style="width: 90%; height: auto; display: block; margin-top: 15px; margin-left: auto; margin-right: auto;">
             </section>
         </div>
-        <div class="images"></div>
-        <marquee scrollamount="12" class="footer subtitle">
-            <span class="version" style="float: left;"></span>
-        </marquee>
-        <script>window.location.href = "../3.0.2";</script>
+        <div class="footer subtitle">
+            <span>Made by T</span>
+            <span class="version" style="float: right;">v?</span>
+        </div>
     </body>
 </html>

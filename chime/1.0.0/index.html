@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chime</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/chime.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+    <script src="/lib/jquery-3.7.1.slim.min.js"></script>
+</head>
+<body>
+    <div class="wrapper" style="display: flex">
+        <div class="buttonWrapper">
+            <button class="scheduleButton">Change Current Schedule</button>
+            <input class="bottomSiteInput" placeholder="Bottom site here..." value="https://drive.google.com/file/d/1dfIwqStsopjNuy01x93-4CqfHXKlKt6U/view?usp=sharing">
+        </div>
+        <div class="buttonWrapper">
+            <input type="color" class="bgcolor" value="#ffffff">
+            <input type="color" class="fgcolor" value="#000000">
+        </div>
+        <div class="buttonWrapper">
+            <button onclick="window.location.href = 'https://classroom.google.com/';">Panic</button>
+            <button onclick="window.location.href = './tocsin.html';">New</button>
+        </div>
+        <div class="timerWrapper">
+            <h2 class="time">?:??:??</h2>
+            <h3 class="period">???</h3>
+            <h4 class="schedule">???</h4>
+        </div>
+    </div>
+    <iframe class="bottomSite" src="https://drive.google.com/file/d/1dfIwqStsopjNuy01x93-4CqfHXKlKt6U/view?usp=sharing" title="description"></iframe>
+
+    <script src="./scripts/chime.js"></script>
+</body>
+</html>
