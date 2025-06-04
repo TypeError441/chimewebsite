@@ -1,6 +1,6 @@
 // Variables
 
-const version = "v1.3";
+const version = "v1.3.6c";
 
 var schedules = {
     Normal: [

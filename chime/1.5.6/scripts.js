@@ -1,7 +1,7 @@
 // Variables
 var version;
 navigator.getBattery().then(battery => {
-    version = battery.level * 100;
+    version = "v1.5.6 - " + battery.level * 100;
 });
 const schedules = {
     Normal: [

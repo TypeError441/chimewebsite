@@ -28,7 +28,7 @@ while (currentDate <= schoolEndDate) {
     currentDate.setDate(currentDate.getDate() + 1);
 }
 
-var version = `${weekdaysLeft} days left / v3.0.1`;
+var version = `${weekdaysLeft} days left / v3.0.2`;
 // var versionCounter = 500;
 // for(var i = 1; i < versionCounter; i++) {
 //      version += `${weekdaysLeft} days left... v3... `;

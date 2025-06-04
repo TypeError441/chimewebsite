@@ -2,7 +2,7 @@
 let todayDate = new Date();
 let schoolEndDate = new Date("2025-06-04");
 let timeDifference = schoolEndDate - todayDate;
-var version = Math.floor(timeDifference / (1000 * 3600 * 24)) + " days left...";
+var version = "v2.5 - " + Math.floor(timeDifference / (1000 * 3600 * 24)) + " days left...";
 
 const schedules = {
     "Normal": [
