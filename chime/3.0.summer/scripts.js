@@ -444,7 +444,7 @@ const secretKeyCodes = {
         let $pizza = $('<img>', {
             id: idrandom,
             class: 'pizza',
-            src: '/chime/src/image/cheese_pizza.png',
+            src: '/lib/image/cheese_pizza.png',
             css: {
                 position: 'fixed',
                 top: topPercent + '%',
@@ -468,7 +468,7 @@ const secretKeyCodes = {
         let $suspense = $('<img>', {
             id: idrandom,
             class: 'suspense',
-            src: '/chime/src/image/kesselring_suspense.png',
+            src: '/lib/image/kesselring_suspense.png',
             css: {
                 position: 'fixed',
                 top: topPercent + '%',
