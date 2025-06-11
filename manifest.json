@@ -1,14 +1,25 @@
 {
     "name": "Chime",
     "short_name": "Chime",
+    "id": "/chime",
     "start_url": "/chime/3.0.summer",
     "display": "standalone",
     "background_color": "#1e1e1e",
     "theme_color": "#1e1e1e",
     "icons": [
         {
-            "src": "/lib/icon-1024.png",
-            "sizes": "1024x1024",
+            "src": "/lib/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/lib/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "/lib/icon-2048.png",
+            "sizes": "2048x2048",
             "type": "image/png"
         }
     ]
