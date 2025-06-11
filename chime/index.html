@@ -1,4 +1,42 @@
+<!DOCTYPE html>
+<title>Chime</title>
 <script>
-function isStandalone() { return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true; }
-if (isStandalone()) window.location.href = "/chime/3.0.summer";
+    const version = "3.0.summer";
+    fetch(`/chime/${version}/index.html`)
+        .then(res => res.text())
+        .then(html => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, "text/html");
+
+            document.body.innerHTML = doc.body.innerHTML;
+
+            // Manually add stylesheets
+            const styles = doc.head.querySelectorAll("link[rel='stylesheet']");
+            styles.forEach(link => {
+                const newLink = document.createElement("link");
+                newLink.rel = link.rel;
+                newLink.href = link.href;
+                newLink.type = link.type || "text/css";
+                document.head.appendChild(newLink);
+            });
+
+            const jqueryScript = document.createElement("script");
+            jqueryScript.src = "https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js";
+            jqueryScript.onload = () => {
+                const scripts = doc.head.querySelectorAll("script[src]");
+                scripts.forEach(script => {
+                    const newScript = document.createElement("script");
+                    newScript.src = script.src;
+                    newScript.type = script.type || "text/javascript";
+                    newScript.defer = script.defer || false;
+                    newScript.async = script.async || false;
+                    document.body.appendChild(newScript);
+                });
+            };
+            document.head.appendChild(jqueryScript);
+        })
+        .catch(err => {
+            document.body.innerHTML = "<p>Failed to load app. Try refreshing.</p>";
+            console.error("Failed to fetch app:", err);
+        });
 </script>
