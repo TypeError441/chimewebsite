@@ -9,9 +9,9 @@
 
     const IS_PWA = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
 
-    if (IS_PWA) window.location.href = `/chime/${VER}/index.html`;
+    if (IS_PWA) window.location.href = `/chime/${ver}/index.html`;
     else {
-        fetch(`/chime/${VER}/index.html`)
+        fetch(`/chime/${ver}/index.html`)
             .then(res => res.text())
             .then(html => {
                 const parser = new DOMParser();
@@ -19,7 +19,6 @@
 
                 document.body.innerHTML = doc.body.innerHTML;
 
-                // Manually add stylesheets
                 const styles = doc.head.querySelectorAll("link[rel='stylesheet']");
                 styles.forEach(link => {
                     const newLink = document.createElement("link");
