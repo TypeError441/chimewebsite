@@ -1,6 +1,6 @@
 // Variables
 
-const version = "v1.3.4";
+const version = "v1.3.1b";
 
 var schedules = {
     Normal: [
@@ -186,7 +186,7 @@ $(document).ready(function () {
         var currentSetting = localStorage.getItem("settings") === "true";
         localStorage.setItem("settings", currentSetting ? "false" : "true");
         
-        $(".optionsButtons").slideToggle(200);
+        $(".optionsButtons").toggle(200);
         $(".settings").text($(".settings").text() === "▼" ? "▲" : "▼");
 
         $(".leave").text($(".leave").text() === "X" ? "Classroom (Panic)" : "X");
@@ -194,7 +194,7 @@ $(document).ready(function () {
 
     $(".leave").click(function() {
         $("body").hide();
-        $("body").slideDown(2000);
+        $("body").show(2000);
         window.location.href="https://classroom.google.com/";
     });
 

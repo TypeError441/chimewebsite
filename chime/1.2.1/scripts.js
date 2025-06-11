@@ -1,6 +1,6 @@
 // Variables
 
-const version = "v1.3.4";
+const version = "v1.2.1e";
 
 var schedules = {
     Normal: [
@@ -63,32 +63,14 @@ var currentSchedule = schedules[scheduleKeys[dayIndex]];
 
 // Functions
 
+function switchSchedule() {
+    dayIndex = (dayIndex + 1) % scheduleKeys.length;
+    currentSchedule = schedules[scheduleKeys[dayIndex]];
+    updateSchedule();
+}
+
 function updateSchedule() {
-    // Schedule
     let now = new Date();
-    $(".schedule").empty(); 
-    let n = $("<p class='title'>").text("Schedule");
-    n.css("font-family", localStorage.getItem("font"));
-    $(".schedule").append(n);
-
-    for (let i = 0; i < currentSchedule.length; i++) {
-        let [hour, minute, text] = currentSchedule[i];
-        let targetTime = new Date();
-        targetTime.setHours(hour, minute, 0, 0);
-        let prevTime = i > 0 ? currentSchedule[i - 1] : [hour, minute]; 
-        let [prevHour, prevMinute] = prevTime;
-        let periodText = $("<p>").addClass("heading-1");
-
-        periodText.text(`${prevHour}:${prevMinute < 10 ? "0" + prevMinute : prevMinute} - ${hour}:${minute < 10 ? "0" + minute : minute} | ${text}`);
-
-        periodText.css("font-family", localStorage.getItem("font"));
-
-        $(".schedule").append(periodText);
-    }
-
-    $(".text-schedule").text(scheduleKeys[dayIndex]);
-    
-    // Current Period
     let foundNextPeriod = false;
 
     for (let [hour, minute, text] of currentSchedule) {
@@ -133,69 +115,28 @@ function update() {
 $(document).ready(function () {
     $(".version").text(version);
 
-    // Get the selected font from localStorage
     var selectedFont = localStorage.getItem("font");
     if (selectedFont) {
-        // Apply font to the whole page and the schedule
-        $("*").css("font-family", selectedFont);
-        $(".schedule").css("font-family", selectedFont);  // Make sure to apply the font to the schedule too
-        $("select.font").val(selectedFont);
+        $('*').css('font-family', selectedFont);
+        $('select.font').val(selectedFont);
     }
 
-    // Change font when the user selects from dropdown
-    $("select.font").change(function() {
+    var savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        $('html').attr('data-theme', savedTheme);
+        $('.theme').val(savedTheme);
+    }
+
+    $('select.font').change(function() {
         var selectedFont = $(this).val();
-        $("*").css("font-family", selectedFont);
-        $(".schedule").css("font-family", selectedFont); // Apply to schedule
+        $('*').css('font-family', selectedFont);
         localStorage.setItem("font", selectedFont);
     });
 
-    var savedTheme = localStorage.getItem("theme");
-    if (savedTheme) {
-        $("html").attr("data-theme", savedTheme);
-        $(".theme").val(savedTheme);
-    }
-
-    $(".theme").change(function() {
+    $('.theme').change(function() {
         var selectedTheme = $(this).val();
-        $("html").attr("data-theme", selectedTheme);
-        localStorage.setItem("theme", selectedTheme);
-    });
-    $("body").addClass("loaded");
-
-    $(".schedules").val(dayIndex);
-    $(".schedules").change(function() {
-        dayIndex = $(this).val();
-        currentSchedule = schedules[scheduleKeys[dayIndex]];
-        updateSchedule();
-    });
-
-    var settingsOpened = localStorage.getItem("settings");
-    if (settingsOpened !== null) {
-        if (settingsOpened === "false") {
-            $(".optionsButtons").toggle();
-            $(".settings").text("▼");
-
-            $(".leave").text("X");
-        }
-    } else {
-        localStorage.setItem("settings", "true");
-    }
-
-    $(".settings").click(function() {
-        var currentSetting = localStorage.getItem("settings") === "true";
-        localStorage.setItem("settings", currentSetting ? "false" : "true");
-        
-        $(".optionsButtons").slideToggle(200);
-        $(".settings").text($(".settings").text() === "▼" ? "▲" : "▼");
-
-        $(".leave").text($(".leave").text() === "X" ? "Classroom (Panic)" : "X");
-    });
-
-    $(".leave").click(function() {
-        $("body").hide();
-        $("body").slideDown(2000);
-        window.location.href="https://classroom.google.com/";
+        $('html').attr('data-theme', selectedTheme);
+        localStorage.setItem('theme', selectedTheme);
     });
 
     if ("serviceWorker" in navigator) {

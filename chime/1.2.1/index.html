@@ -3,10 +3,10 @@
     <head>
         <meta charset="utf-8">
         <title>Chime | Loading...</title>
-        <link rel="stylesheet" href="/chime/1.2.3/styles.css">
+        <link rel="stylesheet" href="/chime/1.2.1e/styles.css">
         <link rel="manifest" href="/manifest.json">
         <script src='/lib/jquery-3.7.1.slim.min.js'></script>
-        <script src="/chime/1.2.3/scripts.js"></script>
+        <script src="/chime/1.2.1e/scripts.js"></script>
     </head>
     <body>
         <div class="header title">Chime</div>
@@ -14,7 +14,7 @@
             <section class="options">
                 <span class="optionsButtons">
                     <button onclick="switchSchedule();">Switch Schedule</button>
-                    <select name="Schedule" class="schedules">
+                    <select name="Schedule" class="schedule">
                         <option value="0">Sunday (weekend)</option>
                         <option value="1">Monday (normal)</option>
                         <option value="2">Tuesday (tutorial)</option>
@@ -26,22 +26,19 @@
                         <option value="8">Assembly</option>
                     </select>
                     <select name="Theme" class="theme">
-                        <option value="default-dark">Default (dark)</option>
-                        <option value="default-light">Default (light)</option>
-                        <option value="blue-dark">Blue (dark)</option>
-                        <option value="blue-light">Blue (light)</option>
+                        <option value="dark">Dark - default</option>
+                        <option value="light">Light</option>
                     </select>
                     <select name="Font" class="font">
-                        <option value="'Roboto'">bell.plus default</option>
-                        <option value="'Roboto'">Sans-serif</option>
+                        <option value="'Roboto'">Sans-serif - default (Roboto)</option>
                         <option value="serif">Serif</option>
-                        <option value="monospace">Monospace</option>
+                        <option value="monospace">Monospace (Courier New)</option>
                         <option value="cursive">Cursive</option>
-                        <option value="fantasy">Fantasy</option>
+                        <option value="fantasy">Fantasy (Papyrus)</option>
                     </select>
                 </span>
                 <span style="float: right;">
-                    <button class="settings" onclick="toggleSettings();">Hide</button>
+                    <button class="leave settings" onclick="toggleSettings();">Hide</button>
                     <button class="leave" onclick="$('body').hide(); window.location.href='https://classroom.google.com/';">Classroom (Panic)</button>
                 </span>
             </section>
