@@ -1,1 +1,4 @@
-<script>window.location.href = "/chime/3.0.summer";</script>
+<script>
+function isStandalone() { return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true; }
+if (isStandalone()) window.location.href = "/chime/3.0.summer";
+</script>
