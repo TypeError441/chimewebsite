@@ -2,7 +2,7 @@
     "name": "Chime",
     "short_name": "Chime",
     "id": "/chime",
-    "_ver": "3.0.summer",
+    "ver": "3.0.summer",
     "start_url": "/chime/",
     "display": "standalone",
     "background_color": "#1e1e1e",
