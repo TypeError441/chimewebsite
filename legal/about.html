@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>About</title>
+        <link rel="manifest" href="/manifest.json">
+        <link rel="stylesheet" href="/lib/themes.css">
+        <script src='/lib/jquery-3.7.1.slim.min.js'></script>
+        <script src='/lib/themes.js'></script>
+    </head>
+    <body>
+        <div class="header title">Chime</div>
+        <div class="container">
+            <div class="about-container">
+                <p class="oversized">About Chime</p>
+                <p class="heading-1">Chime started as a simple bell timer inspired by bell.plus, but it’s grown into more. It's become a set of tools for students to stay on track, study better, and have a little fun while doing it. Everything here is designed to be lightweight, fast, and easy to use at school without distractions or bloat.</p>
+                <p class="heading-1">For students, by students.</p>
+            </div>
+        </div>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+            .about-container {
+                text-align: center;
+                font-family: 'Roboto Mono', monospace;
+                font-weight: 400;
+                font-size: 1.2em;
+                color: #333;
+            }
+
+            .oversized {
+                font-family: "Roboto Mono", monospace;
+                font-weight: 700;
+            }
+
+            p { margin: 25px 0; }
+        </style>
+        <script>
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme) $("html").attr("data-theme", savedTheme);
+
+            if ("serviceWorker" in navigator) {
+                window.addEventListener("load", () => {
+                    navigator.serviceWorker.register("/service-worker.js")
+                        .then(registration => console.log("Service Worker registered:", registration))
+                        .catch(error => console.error("Service Worker registration failed:", error));
+                });
+            }
+        </script>
+    </body>
+</html>

@@ -236,4 +236,30 @@ body {
     flex-direction: column;
     height: calc(100vh - 50px);
     margin-top: 50px;
+    gap: 20px;
+    align-items: center;
+}
+
+p, h1, h2, h3, h4, h5, h6 { font-size: 14px; }
+
+.oversized { font-weight: bold; font-size: 40px; }
+
+.title { font-weight: bold; font-size: 26px; }
+
+.subtitle { font-size: 15px; font-style: italic; }
+
+.heading-1 { font-size: 20px; }
+
+.heading-2 { font-size: 16px; }
+
+.heading-3 { font-size: 14px; }
+
+.header {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    z-index: 1000;
+    background-color: var(--secondary-background-color);
+    top: 0;
 }
