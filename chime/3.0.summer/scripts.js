@@ -354,13 +354,12 @@ function update() {
 }
 
 $(document).ready(function () {
-    $(".belldefault").hide();
     $(".caasppschedules").hide();
     $(".twentytwoothree").hide();
     const selectedFont = localStorage.getItem("font");
 
     if (selectedFont) {
-        if (selectedFont === "'Roboto', sans-serif") $(".belldefault").show();
+        if (selectedFont === "'Roboto'") localStorage.setItem("font", "'Roboto', sans-serif");
         $("*").css("font-family", selectedFont);
         $(".schedule").css("font-family", selectedFont);
         $("select.font").val(selectedFont);
@@ -434,13 +433,6 @@ $(document).ready(function () {
 });
 
 const secretKeyCodes = {
-    "bell": () => {
-        $(".belldefault").show();
-        $("*").css("font-family", "'Roboto', sans-serif");
-        $(".schedule").css("font-family", "'Roboto', sans-serif");
-        $("select.font").val("'Roboto', sans-serif");
-        localStorage.setItem("font", "'Roboto', sans-serif");
-    },
     "title": () => {
         const toggle = localStorage.getItem("displayInTitle") === "true" ? "false" : "true";
         localStorage.setItem("displayInTitle", toggle);

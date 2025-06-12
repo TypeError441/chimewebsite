@@ -4,9 +4,11 @@
         <meta charset="utf-8">
         <title>Chime | Loading...</title>
         <link rel="stylesheet" href="/chime/3.0.summer/styles.css">
+        <link rel="stylesheet" href="/lib/themes.css">
         <link rel="manifest" href="/manifest.json">
         <script src='/lib/jquery-3.7.1.slim.min.js'></script>
         <script src="/chime/3.0.summer/scripts.js"></script>
+        <script src="/lib/themes.js"></script>
     </head>
     <body>
         <div class="header title">
@@ -46,8 +48,11 @@
                         <option value="coffee">Coffee</option>
                         <option value="code">Code</option>
                         <option value="space">Space</option>
-                        <option value="ocean">Ocean (honestly why would you use this)</option>
-                        <option value="sunset">Sunset (honestly why would you use this)</option>
+                        <option value="ocean">Legacy (ocean)</option>
+                        <option value="sunset">Legacy (sunset)</option>
+                        <option value="dark">Legacy (dark)</option>
+                        <option value="light">Legacy (light)</option>
+                        <option value="legacy">Legacy</option>
                     </select>
                     <select name="Font" class="font">
                         <option value="'Arial', sans-serif">Arial</option>
@@ -60,7 +65,11 @@
                         <option value="'Courier New', monospace">Courier New</option>
                         <option value="'Brush Script MT', cursive">Comic Sans MS/Brush Script MT</option>
                         <option value="'Moo Lah Lah'">???</option>
-                        <option class="belldefault" value="'Roboto', sans-serif">bell.plus default ⭐️</option>
+                        <option value="'Roboto', sans-serif">bell.plus default</option>
+                        <option value="serif">Serif</option>
+                        <option value="monospace">Monospace</option>
+                        <option value="cursive">Cursive</option>
+                        <option value="fantasy">Fantasy</option>
                     </select>
                     <p class="caasppreminder" style="float: right; display: none;">
                         CAASPP schedules are available 
