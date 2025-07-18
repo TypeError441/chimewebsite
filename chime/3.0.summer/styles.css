@@ -1,7 +1,222 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Moo+Lah+Lah&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
-/* Global Styles */
+:root {
+    --background-color: #1e1e1e;
+    --background-image: none;
+    --color: #f5f5f5;
+
+    --button-background-color: #3a3f44;
+    --button-hover-background-color: #50565c;
+    --button-color: #ffffff;
+
+    --button-leave-background-color: #6aff4c;
+    --button-leave-hover-background-color: #4ae63c;
+    --button-leave-color: #ffffff;
+
+    --secondary-background-color: #292d32;
+
+    --progress-value-background-color: #4caf50;
+}
+
+[data-theme="default-dark"] {
+    --background-color: #1e1e1e;
+    --background-image: none;
+    --color: #f5f5f5;
+
+    --button-background-color: #3a3f44;
+    --button-hover-background-color: #50565c;
+    --button-color: #ffffff;
+
+    --button-leave-background-color: #6aff4c;
+    --button-leave-hover-background-color: #4ae63c;
+    --button-leave-color: #ffffff;
+
+    --secondary-background-color: #292d32;
+
+    --progress-value-background-color: #4caf50;
+}
+
+[data-theme="default-light"] {
+    --background-color: #f9f9f9;
+    --background-image: none;
+    --color: #202124;
+
+    --button-background-color: #d2dadc;
+    --button-hover-background-color: #c5cece;
+    --button-color: #000000;
+
+    --button-leave-background-color: #6aff4c;
+    --button-leave-hover-background-color: #4ae63c;
+    --button-leave-color: #ffffff;
+
+    --secondary-background-color: #f2f4f8;
+
+    --progress-value-background-color: #4caf50;
+}
+
+[data-theme="blue-dark"] {
+    --background-color: #1a1d26;
+    --background-image: none;
+    --color: #e0e7ff;
+
+    --button-background-color: #4c5c7f;
+    --button-hover-background-color: #3e4b69;
+    --button-color: #ffffff;
+
+    --button-leave-background-color: #6aff4c;
+    --button-leave-hover-background-color: #4ae63c;
+    --button-leave-color: #ffffff;
+
+    --secondary-background-color: #2d364b;
+
+    --progress-value-background-color: #4f83cc;
+}
+
+[data-theme="blue-light"] {
+    --background-color: #e0f1ff;
+    --background-image: none;
+    --color: #1a1d26;
+
+    --button-background-color: #c1d9ff;
+    --button-hover-background-color: #a6c8ff;
+
+    --button-leave-background-color: #6aff4c;
+    --button-leave-hover-background-color: #4ae63c;
+    --button-leave-color: #ffffff;
+
+    --secondary-background-color: #c8e0ff;
+
+    --progress-value-background-color: #4f83cc;
+}
+
+[data-theme="coffee"] {
+    --background-color: #47372a;
+    --background-image: none;
+    --color: #f5e1a4;
+
+    --button-background-color: #d1a56d;
+    --button-hover-background-color: #a67c39;
+    --button-color: #ffffff;
+
+    --button-leave-background-color: #6aff4c;
+    --button-leave-hover-background-color: #4ae63c;
+    --button-leave-color: #ffffff;
+
+    --secondary-background-color: #4a2c2a;
+
+    --progress-value-background-color: #9a703d;
+}
+
+[data-theme="code"] {
+    --background-color: #1e1e1e;
+    --background-image: none;
+    --color: #00ff00;
+
+    --button-background-color: #333333;
+    --button-hover-background-color: #4d4d4d;
+    --button-color: #00ff00;
+
+    --button-leave-background-color: #6aff4c;
+    --button-leave-hover-background-color: #4ae63c;
+    --button-leave-color: #ffffff;
+
+    --secondary-background-color: #2c2c2c;
+
+    --progress-value-background-color: #33ff33;
+}
+
+[data-theme="dark"] {
+    --background-color: #343a40;
+    --color: #ffffff;
+
+    --button-background-color: #ffffff;
+    --button-hover-background-color: #cdcdcd;
+    --button-color: #000000;
+
+    --button-leave-background-color: #ff5f5f;
+    --button-leave-hover-background-color: #ff3737;
+    --button-leave-color: #ffffff;
+
+    --header-footer-background-color: #2d3237;
+
+    --light-background-color: #4c545d;
+    --lighter-background-color: #9ca7b2;
+}
+
+[data-theme="light"] {
+    --background-color: #ffffff;
+    --color: #000000;
+
+    --button-background-color: #e8e8e8;
+    --button-hover-background-color: #d6d6d6;
+    --button-color: #000000;
+
+    --button-leave-background-color: #ff5f5f;
+    --button-leave-hover-background-color: #d09c9c;
+    --button-leave-color: #000000;
+
+    --header-footer-background-color: #e8e8e8;
+
+    --light-background-color: #e8e8e8;
+    --lighter-background-color: #ececec;
+}
+
+[data-theme="ocean"] {
+    --background-color: none;
+    --background-image: linear-gradient(to bottom, #2e8b57, #006d2c);
+    --color: #ffffff;
+
+    --button-background-color: #4682b4;
+    --button-hover-background-color: #5f9ea0;
+    --button-color: #ffffff;
+
+    --button-leave-background-color: #ff4500;
+    --button-leave-hover-background-color: #4ae63c;
+    --button-leave-color: #ffffff;
+
+    --secondary-background-color: #20b2aa;
+
+    --progress-value-background-color: #3cb371;
+}
+
+[data-theme="sunset"] {
+    --background-color: none;
+    --background-image: linear-gradient(to bottom, #ff6347, #ff4500);
+    --color: #ffffff;
+
+    --button-background-color: #ff4500;
+    --button-hover-background-color: #e03e00;
+    --button-color: #ffffff;
+
+    --button-leave-background-color: #8a2be2;
+    --button-leave-hover-background-color: #4ae63c;
+    --button-leave-color: #ffffff;
+
+    --secondary-background-color: #ff8c00;
+
+    --progress-value-background-color: #ff1493;
+}
+
+[data-theme="space"] {
+    --background-color: #000000;
+    --background-image: url("https://images.pond5.com/black-empty-space-stars-dark-footage-073036484_iconl.jpeg");
+    --color: #ffffff;
+
+    --button-background-color: #1f0432;
+    --button-hover-background-color: #2e0a2e;
+    --button-color: #ffffff;
+
+    --button-leave-background-color: #6aff4c;
+    --button-leave-hover-background-color: #4ae63c;
+    --button-leave-color: #ffffff;
+
+    --secondary-background-color: #000000;
+
+    --progress-value-background-color: #c0c0c0;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -16,8 +231,15 @@ body {
     background-attachment: fixed;
     background-repeat: repeat;
     background-position: center;
+}
 
-    padding: 50px 0;
+.container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 50px);
+    margin-top: 50px;
+    gap: 20px;
+    align-items: center;
 }
 
 body.loaded * { transition: color 0.2s, background-color 0.2s; }
@@ -51,12 +273,13 @@ button, select {
     background-color: var(--button-background-color);
     color: var(--button-color);
 }
-button:hover { 
+
+button:hover {
     cursor: pointer; 
     background-color: var(--button-hover-background-color); 
 }
 
-option { 
+option {
     color: var(--button-color); 
 }
 
@@ -87,13 +310,6 @@ option {
 
 .header { top: 0; }
 .footer { bottom: 0; }
-
-.container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
-}
 
 .content { width: calc(100vw - 50px); }
 

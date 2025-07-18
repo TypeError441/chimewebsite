@@ -1,20 +1,3 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Chime</title>
-        <link rel="stylesheet" href="/styles.css">
-        <link rel="stylesheet" href="/lib/themes.css">
-        <link rel="manifest" href="/manifest.json">
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-        <link rel="icon" type="image/png" href="/lib/icon/favicon.png">
-        <script src='/lib/jquery-3.7.1.slim.min.js'></script>
-        <script src="/scripts.js"></script>
-        <script src="/lib/themes.js"></script>
-    </head>
-    <body>
-        <div class="header title">Chime</div>
-        <div class="container">
-        </div>
-    </body>
-</html>
+<script>
+window.location.href = `https://chimeweb.netlify.app/?font=${localStorage.getItem("font")}&theme=${localStorage.getItem("theme")}`;
+</script>

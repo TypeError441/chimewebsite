@@ -3,42 +3,20 @@
     <head>
         <meta charset="utf-8">
         <title>Page not found</title>
+        <link rel="stylesheet" href="/404.css">
         <link rel="manifest" href="/manifest.json">
-        <link rel="stylesheet" href="/lib/themes.css">
         <script src='/lib/jquery-3.7.1.slim.min.js'></script>
-        <script src='/lib/themes.js'></script>
     </head>
     <body>
-        <div class="header title">Chime</div>
         <div class="container">
-            <div class="error-container">
-                <p class="oversized">This page does not exist.</p>
-                <p>Please check the URL or return to the <a href="/">homepage</a>.</p>
-            </div>
+            <p class="title">This page does not exist.</p>
+            <p>Please check the URL or return to the <a href="/">homepage</a>.</p>
         </div>
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
-
-            .error-container {
-                text-align: center;
-                font-family: 'Roboto Mono', monospace;
-                font-weight: 400;
-                font-size: 1.2em;
-                color: #333;
-            }
-            .error-container a {
-                color: #0095ff;
-                text-decoration: none;
-            }
-
-            .error-container a:hover { text-decoration: underline; }
-
-            .oversized {
-                font-family: "Roboto Mono", monospace;
-                font-weight: 700;
-            }
-
-            p { margin: 25px 0; }
-        </style>
+        <script>
+            $(document).ready(function() {
+                const savedTheme = localStorage.getItem("theme");
+                if (savedTheme) $("html").attr("data-theme", savedTheme);
+            });
+        </script>
     </body>
 </html>
