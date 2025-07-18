@@ -1,3 +1,7 @@
 <script>
-window.location.href = `https://chimeweb.netlify.app/?font=${localStorage.getItem("font")}&theme=${localStorage.getItem("theme")}`;
+    if (localStorage.length >= 0) {
+        localStorage.clear();
+        window.location.href = `https://chimeweb.netlify.app/?font=${localStorage.getItem("font")}&theme=${localStorage.getItem("theme")}`;
+    }
+    else window.location.href = "https://chimeweb.netlify.app/";
 </script>
