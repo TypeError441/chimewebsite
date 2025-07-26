@@ -1,10 +1,10 @@
 <script>
-    if (localStorage.getItem("migrated")) window.location.href = "https://chimetools.netlify.app/";
+    if (localStorage.getItem("migrated")) window.location.href = "https://chimetools.netlify.app/chime";
     else {
         let font = localStorage.getItem("font")
         let theme = localStorage.getItem("theme");
         localStorage.clear();
         localStorage.setItem("migrated", true);
-        window.location.href = `https://chimetools.netlify.app/?font=${font}&theme=${theme}`;
+        window.location.href = `https://chimetools.netlify.app/chime?font=${font}&theme=${theme}`;
     }
 </script>
